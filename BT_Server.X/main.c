@@ -36,8 +36,8 @@ void main(void)
 
         Check_ADC(prev_bend_sensor_val);
 
-        Check_Gyroscope(blinker_dir);
-        __delay_ms(20);
+//        Check_Gyroscope(blinker_dir);
+//        __delay_ms(20);
     }
     return;
 }
