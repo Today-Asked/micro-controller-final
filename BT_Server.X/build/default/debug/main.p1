@@ -24,6 +24,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36 ./setting_hardaware/adc.h
 [; ;./setting_hardaware/adc.h: 36: void Check_ADC();
 [v _Check_ADC `(v ~T0 @X0 0 e? ]
+"7 ./setting_hardaware/gyroscope.h
+[; ;./setting_hardaware/gyroscope.h: 7: void Check_Gyroscope(int blinked_dir);
+[v _Check_Gyroscope `(v ~T0 @X0 0 ef1`i ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.50\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
 [t ~ __interrupt . k ]
 [t T41 __interrupt high_priority ]
 "6698 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
@@ -45,12 +52,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6724
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6724: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS274 ~T0 @X0 0 e@4082 ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.50\pic\include\builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
-[p i __delay ]
 [t T42 __interrupt low_priority ]
-"8180 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
+"8180
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 8180: extern volatile __bit RCIF __attribute__((address(0x7CF5)));
 [v _RCIF `Vb ~T0 @X0 0 e@31989 ]
 "3121
@@ -624,6 +627,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37
 [; ;main.c: 37:         Check_ADC(prev_bend_sensor_val);
 [e ( _Check_ADC _prev_bend_sensor_val ]
+"39
+[; ;main.c: 39:        Check_Gyroscope(blinker_dir);
+[e ( _Check_Gyroscope (1 _blinker_dir ]
+"40
+[; ;main.c: 40:         _delay((unsigned long)((20)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "41
 [; ;main.c: 41:     }
 }

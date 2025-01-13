@@ -4943,8 +4943,8 @@ void main(void)
 
         Check_ADC(prev_bend_sensor_val);
 
-
-
+       Check_Gyroscope(blinker_dir);
+        _delay((unsigned long)((20)*(4000000/4000.0)));
     }
     return;
 }

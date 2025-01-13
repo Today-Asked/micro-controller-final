@@ -5053,9 +5053,6 @@ void Gyroscope_Initialize(void) {
     I2C_Write(0x00);
     I2C_Stop();
 
-
-    TRISA = 0x00;
-    LATA = 0x00;
     Calibration();
 }
 
