@@ -80,9 +80,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4819
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4819: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
 [v _ADCON0bits `VS188 ~T0 @X0 0 e@4034 ]
-"121 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "7 setting_hardaware/uart.h
 [; ;setting_hardaware/uart.h: 7: void UART_Write_Text(char* text);
 [v _UART_Write_Text `(v ~T0 @X0 0 ef1`*uc ]
@@ -585,58 +582,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _bend_sensor_val `i ~T0 @X0 1 a ]
 [e = _bend_sensor_val ( _ADC_Read (1 _bend_sensor_val ]
 "37
-[; ;setting_hardaware/adc.c: 37:     char tmp[10];
-[v _tmp `uc ~T0 @X0 -> 10 `i a ]
-"38
-[; ;setting_hardaware/adc.c: 38:     sprintf(tmp, "%d\r\n", bend_sensor_val);
-[e ( _sprintf (1 , (. , &U _tmp :s 1C _bend_sensor_val ]
-"39
-[; ;setting_hardaware/adc.c: 39:     UART_Write_Text(tmp);
-[e ( _UART_Write_Text (1 &U _tmp ]
-"41
-[; ;setting_hardaware/adc.c: 41:     if(prev_sensor_val<bend_sensor_val-5 || prev_sensor_val>bend_sensor_val+5)
+[; ;setting_hardaware/adc.c: 37:     if(prev_sensor_val<bend_sensor_val-5 || prev_sensor_val>bend_sensor_val+5)
 [e $ ! || < _prev_sensor_val - _bend_sensor_val -> 5 `i > _prev_sensor_val + _bend_sensor_val -> 5 `i 289  ]
-"42
-[; ;setting_hardaware/adc.c: 42:     {
+"38
+[; ;setting_hardaware/adc.c: 38:     {
 {
-"43
-[; ;setting_hardaware/adc.c: 43:         prev_sensor_val=bend_sensor_val;
+"39
+[; ;setting_hardaware/adc.c: 39:         prev_sensor_val=bend_sensor_val;
 [e = _prev_sensor_val _bend_sensor_val ]
-"44
-[; ;setting_hardaware/adc.c: 44:     }
+"40
+[; ;setting_hardaware/adc.c: 40:     }
 }
 [e :U 289 ]
-"46
-[; ;setting_hardaware/adc.c: 46:     if(prev_sensor_val<=0x0130)
+"42
+[; ;setting_hardaware/adc.c: 42:     if(prev_sensor_val<=0x0130)
 [e $ ! <= _prev_sensor_val -> 304 `i 290  ]
+"43
+[; ;setting_hardaware/adc.c: 43:     {
+{
+"44
+[; ;setting_hardaware/adc.c: 44:         UART_Write_Text("BN\r\n");
+[e ( _UART_Write_Text (1 :s 1C ]
+"45
+[; ;setting_hardaware/adc.c: 45:     }
+}
+[e $U 291  ]
+"46
+[; ;setting_hardaware/adc.c: 46:     else
+[e :U 290 ]
 "47
 [; ;setting_hardaware/adc.c: 47:     {
 {
 "48
-[; ;setting_hardaware/adc.c: 48:         UART_Write_Text("BN\r\n");
+[; ;setting_hardaware/adc.c: 48:         UART_Write_Text("BF\r\n");
 [e ( _UART_Write_Text (1 :s 2C ]
 "49
 [; ;setting_hardaware/adc.c: 49:     }
 }
-[e $U 291  ]
-"50
-[; ;setting_hardaware/adc.c: 50:     else
-[e :U 290 ]
-"51
-[; ;setting_hardaware/adc.c: 51:     {
-{
-"52
-[; ;setting_hardaware/adc.c: 52:         UART_Write_Text("BF\r\n");
-[e ( _UART_Write_Text (1 :s 3C ]
-"53
-[; ;setting_hardaware/adc.c: 53:     }
-}
 [e :U 291 ]
-"54
-[; ;setting_hardaware/adc.c: 54: }
+"50
+[; ;setting_hardaware/adc.c: 50: }
 [e :UE 288 ]
 }
-[p f _sprintf 8388736 ]
-[a 1C 37 100 13 10 0 ]
-[a 2C 66 78 13 10 0 ]
-[a 3C 66 70 13 10 0 ]
+[a 1C 66 78 13 10 0 ]
+[a 2C 66 70 13 10 0 ]

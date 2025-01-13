@@ -34,10 +34,6 @@ void Check_ADC(int prev_sensor_val){
 
     int bend_sensor_val=ADC_Read(bend_sensor_val);
     
-    char tmp[10];
-    sprintf(tmp, "%d\r\n", bend_sensor_val);
-    UART_Write_Text(tmp);
-    
     if(prev_sensor_val<bend_sensor_val-5 || prev_sensor_val>bend_sensor_val+5)
     {
         prev_sensor_val=bend_sensor_val;
