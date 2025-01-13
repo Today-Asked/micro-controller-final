@@ -67,7 +67,8 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     UART_Initialize();
     //CCP1_Initialize();
-    //ADC_Initialize();
+    ADC_Initialize();
+    Gyroscope_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)

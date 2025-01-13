@@ -33,6 +33,7 @@
 
 void ADC_Initialize() ;
 int ADC_Read(int channel);
+void Check_ADC();
 
 #endif
 

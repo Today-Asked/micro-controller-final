@@ -10,6 +10,7 @@
 #include "adc.h"
 #include "interrupt_manager.h"
 #include "pin_manager.h"
+#include "gyroscope.h"
 
 void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
