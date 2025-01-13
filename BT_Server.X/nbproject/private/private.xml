@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/yunyu/MPLABXProjects/BT_Server.X/setting_hardaware/uart.c</file>
-            <file>file:/C:/Users/yunyu/MPLABXProjects/BT_Server.X/main.c</file>
+            <file>file:/C:/Users/user/Mavis/micro-controller-final/BT_Server.X/setting_hardaware/gyroscope.h</file>
+            <file>file:/C:/Users/user/Mavis/micro-controller-final/BT_Server.X/setting_hardaware/adc.c</file>
+            <file>file:/C:/Users/user/Mavis/micro-controller-final/BT_Server.X/setting_hardaware/setting.h</file>
+            <file>file:/C:/Users/user/Mavis/micro-controller-final/BT_Server.X/setting_hardaware/gyroscope.c</file>
+            <file>file:/C:/Users/user/Mavis/micro-controller-final/BT_Server.X/setting_hardaware/interrupt_manager.h</file>
+            <file>file:/C:/Users/user/Mavis/micro-controller-final/BT_Server.X/setting_hardaware/interrupt_manager.c</file>
+            <file>file:/C:/Users/user/Mavis/micro-controller-final/BT_Server.X/setting_hardaware/uart.c</file>
+            <file>file:/C:/Users/user/Mavis/micro-controller-final/BT_Server.X/setting_hardaware/setting.c</file>
+            <file>file:/C:/Users/user/Mavis/micro-controller-final/BT_Server.X/main.c</file>
         </group>
     </open-files>
 </project-private>

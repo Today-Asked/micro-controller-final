@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=setting_hardaware/adc.c setting_hardaware/ccp1.c setting_hardaware/interrupt_manager.c setting_hardaware/setting.c setting_hardaware/uart.c main.c
+SOURCEFILES_QUOTED_IF_SPACED=setting_hardaware/adc.c setting_hardaware/ccp1.c setting_hardaware/interrupt_manager.c setting_hardaware/setting.c setting_hardaware/uart.c main.c setting_hardaware/gyroscope.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/setting_hardaware/adc.p1 ${OBJECTDIR}/setting_hardaware/ccp1.p1 ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1 ${OBJECTDIR}/setting_hardaware/setting.p1 ${OBJECTDIR}/setting_hardaware/uart.p1 ${OBJECTDIR}/main.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/setting_hardaware/adc.p1.d ${OBJECTDIR}/setting_hardaware/ccp1.p1.d ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1.d ${OBJECTDIR}/setting_hardaware/setting.p1.d ${OBJECTDIR}/setting_hardaware/uart.p1.d ${OBJECTDIR}/main.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/setting_hardaware/adc.p1 ${OBJECTDIR}/setting_hardaware/ccp1.p1 ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1 ${OBJECTDIR}/setting_hardaware/setting.p1 ${OBJECTDIR}/setting_hardaware/uart.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/setting_hardaware/gyroscope.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/setting_hardaware/adc.p1.d ${OBJECTDIR}/setting_hardaware/ccp1.p1.d ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1.d ${OBJECTDIR}/setting_hardaware/setting.p1.d ${OBJECTDIR}/setting_hardaware/uart.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/setting_hardaware/gyroscope.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/setting_hardaware/adc.p1 ${OBJECTDIR}/setting_hardaware/ccp1.p1 ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1 ${OBJECTDIR}/setting_hardaware/setting.p1 ${OBJECTDIR}/setting_hardaware/uart.p1 ${OBJECTDIR}/main.p1
+OBJECTFILES=${OBJECTDIR}/setting_hardaware/adc.p1 ${OBJECTDIR}/setting_hardaware/ccp1.p1 ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1 ${OBJECTDIR}/setting_hardaware/setting.p1 ${OBJECTDIR}/setting_hardaware/uart.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/setting_hardaware/gyroscope.p1
 
 # Source Files
-SOURCEFILES=setting_hardaware/adc.c setting_hardaware/ccp1.c setting_hardaware/interrupt_manager.c setting_hardaware/setting.c setting_hardaware/uart.c main.c
+SOURCEFILES=setting_hardaware/adc.c setting_hardaware/ccp1.c setting_hardaware/interrupt_manager.c setting_hardaware/setting.c setting_hardaware/uart.c main.c setting_hardaware/gyroscope.c
 
 
 CFLAGS=
@@ -141,6 +141,14 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/setting_hardaware/gyroscope.p1: setting_hardaware/gyroscope.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
+	@${RM} ${OBJECTDIR}/setting_hardaware/gyroscope.p1.d 
+	@${RM} ${OBJECTDIR}/setting_hardaware/gyroscope.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/gyroscope.p1 setting_hardaware/gyroscope.c 
+	@-${MV} ${OBJECTDIR}/setting_hardaware/gyroscope.d ${OBJECTDIR}/setting_hardaware/gyroscope.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/gyroscope.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/setting_hardaware/adc.p1: setting_hardaware/adc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
@@ -190,6 +198,14 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/setting_hardaware/gyroscope.p1: setting_hardaware/gyroscope.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
+	@${RM} ${OBJECTDIR}/setting_hardaware/gyroscope.p1.d 
+	@${RM} ${OBJECTDIR}/setting_hardaware/gyroscope.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/gyroscope.p1 setting_hardaware/gyroscope.c 
+	@-${MV} ${OBJECTDIR}/setting_hardaware/gyroscope.d ${OBJECTDIR}/setting_hardaware/gyroscope.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/gyroscope.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 endif
 
 # ------------------------------------------------------------------------------------
@@ -209,7 +225,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/BT_Server.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/BT_Server.X.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -mrom=default,-7dc0-7fff -mram=default,-5f4-5ff,-f9c-f9c,-fd4-fd4,-fdb-fdf,-fe3-fe7,-feb-fef,-ffd-fff  $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/BT_Server.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/BT_Server.X.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -mrom=default,-7d30-7fff -mram=default,-5ef-5ff,-f9c-f9c,-fd4-fd4,-fdb-fdf,-fe3-fe7,-feb-fef,-ffc-ffc,-ffd-fff  $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/BT_Server.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 	@${RM} dist/${CND_CONF}/${IMAGE_TYPE}/BT_Server.X.${IMAGE_TYPE}.hex 
 	
 else

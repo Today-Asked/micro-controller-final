@@ -2,14 +2,8 @@
 #include <stdint.h>
 #include <math.h>
 #include <pic18f4520.h>
-
-#pragma config OSC = INTIO67 // Oscillator Selection bits
-#pragma config WDT = OFF     // Watchdog Timer Enable bit
-#pragma config PWRT = OFF    // Power-up Enable bit
-#pragma config BOREN = ON    // Brown-out Reset Enable bit
-#pragma config PBADEN = OFF  // Watchdog Timer Enable bit
-#pragma config LVP = OFF     // Low Voltage (single -supply) In-Circute Serial Pragramming Enable bit
-#pragma config CPD = OFF     // Data EEPROM?Memory Code Protection bit (Data EEPROM code protection off)
+#include "gyroscope.h"
+#include "uart.h"
 
 #define LEFT -1
 #define RIGHT 1
@@ -25,12 +19,12 @@
 
 float pitch_offset = 0.0;
 
+int16_t accX, accZ;
+uint8_t accX_high, accX_low, accZ_high, accZ_low;
+float angle;
+
 void Gyroscope_Initialize(void) {
     OSCCON = 0x60;
-    int16_t accX, accZ;
-    uint8_t accX_high, accX_low, accZ_high, accZ_low;
-    float angle;
-
     
     I2C_Init();
     __delay_ms(100);
@@ -74,8 +68,7 @@ void Check_Gyroscope(int blinker_dir){
     } else if (angle < -45.0) {
         UART_Write_Text("LRN\r\n");
     } else {
-        UART_Write_Text("LRF\r\n");
-        UART_Write_Text("LRF\r\n");
+        
     }
 
     __delay_ms(100);

@@ -25,6 +25,8 @@ void main(void)
     SYSTEM_Initialize() ;
     
     int blinker_dir = 0;
+    int prev_bend_sensor_val;
+    
     while(1) {
         if(isConnected == 1 && needSendMsg == 1){
             displayBinary(0);
@@ -32,9 +34,10 @@ void main(void)
             needSendMsg = 0;
         }
 
-        Check_ADC();
+        Check_ADC(prev_bend_sensor_val);
 
         Check_Gyroscope(blinker_dir);
+        __delay_ms(20);
     }
     return;
 }

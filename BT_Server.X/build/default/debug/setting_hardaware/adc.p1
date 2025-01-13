@@ -1,7 +1,19 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"1477 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1477: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
-[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"1488 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1488:     struct {
+[s S60 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S60 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"1498
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1498:     struct {
+[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S61 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"1487
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1487: typedef union {
+[u S59 `S60 1 `S61 1 ]
+[n S59 . . . ]
+"1509
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1509: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
+[v _TRISAbits `VS59 ~T0 @X0 0 e@3986 ]
 "4690
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4690: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
@@ -68,6 +80,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4819
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4819: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
 [v _ADCON0bits `VS188 ~T0 @X0 0 e@4034 ]
+"121 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"7 setting_hardaware/uart.h
+[; ;setting_hardaware/uart.h: 7: void UART_Write_Text(char* text);
+[v _UART_Write_Text `(v ~T0 @X0 0 ef1`*uc ]
 "54 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -482,74 +500,143 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"3 setting_hardaware/adc.c
-[; ;setting_hardaware/adc.c: 3: void ADC_Initialize(void) {
+"5 setting_hardaware/adc.c
+[; ;setting_hardaware/adc.c: 5: void ADC_Initialize(void)
 [v _ADC_Initialize `(v ~T0 @X0 1 ef ]
+"6
+[; ;setting_hardaware/adc.c: 6: {
 {
 [e :U _ADC_Initialize ]
 [f ]
-"4
-[; ;setting_hardaware/adc.c: 4:     TRISA = 0xff;
-[e = _TRISA -> -> 255 `i `uc ]
-"5
-[; ;setting_hardaware/adc.c: 5:     ADCON1 = 0x0e;
-[e = _ADCON1 -> -> 14 `i `uc ]
 "7
-[; ;setting_hardaware/adc.c: 7:     ADFM = 1 ;
-[e = _ADFM -> -> 1 `i `b ]
-"8
-[; ;setting_hardaware/adc.c: 8:     ADCON2bits.ADCS = 7;
-[e = . . _ADCON2bits 0 0 -> -> 7 `i `uc ]
+[; ;setting_hardaware/adc.c: 7:     TRISAbits.RA0 = 1;
+[e = . . _TRISAbits 1 0 -> -> 1 `i `uc ]
 "9
-[; ;setting_hardaware/adc.c: 9:     ADRESH=0;
-[e = _ADRESH -> -> 0 `i `uc ]
-"10
-[; ;setting_hardaware/adc.c: 10:     ADRESL=0;
-[e = _ADRESL -> -> 0 `i `uc ]
+[; ;setting_hardaware/adc.c: 9:     ADCON1 = 0x0e;
+[e = _ADCON1 -> -> 14 `i `uc ]
 "11
-[; ;setting_hardaware/adc.c: 11: }
-[e :UE 281 ]
-}
+[; ;setting_hardaware/adc.c: 11:     ADFM = 1 ;
+[e = _ADFM -> -> 1 `i `b ]
+"12
+[; ;setting_hardaware/adc.c: 12:     ADCON2bits.ADCS = 7;
+[e = . . _ADCON2bits 0 0 -> -> 7 `i `uc ]
 "13
-[; ;setting_hardaware/adc.c: 13: int ADC_Read(int channel)
+[; ;setting_hardaware/adc.c: 13:     ADCON2bits.ACQT = 0b001;
+[e = . . _ADCON2bits 0 1 -> -> 1 `i `uc ]
+"15
+[; ;setting_hardaware/adc.c: 15:     ADRESH=0;
+[e = _ADRESH -> -> 0 `i `uc ]
+"16
+[; ;setting_hardaware/adc.c: 16:     ADRESL=0;
+[e = _ADRESL -> -> 0 `i `uc ]
+"17
+[; ;setting_hardaware/adc.c: 17: }
+[e :UE 283 ]
+}
+"19
+[; ;setting_hardaware/adc.c: 19: int ADC_Read(int channel)
 [v _ADC_Read `(i ~T0 @X0 1 ef1`i ]
-"14
-[; ;setting_hardaware/adc.c: 14: {
+"20
+[; ;setting_hardaware/adc.c: 20: {
 {
 [e :U _ADC_Read ]
-"13
-[; ;setting_hardaware/adc.c: 13: int ADC_Read(int channel)
-[v _channel `i ~T0 @X0 1 r1 ]
-"14
-[; ;setting_hardaware/adc.c: 14: {
-[f ]
-"15
-[; ;setting_hardaware/adc.c: 15:     int digital;
-[v _digital `i ~T0 @X0 1 a ]
-"17
-[; ;setting_hardaware/adc.c: 17:     ADCON0bits.CHS = 0x07;
-[e = . . _ADCON0bits 1 2 -> -> 7 `i `uc ]
-"18
-[; ;setting_hardaware/adc.c: 18:     ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
 "19
-[; ;setting_hardaware/adc.c: 19:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;setting_hardaware/adc.c: 19: int ADC_Read(int channel)
+[v _channel `i ~T0 @X0 1 r1 ]
+"20
+[; ;setting_hardaware/adc.c: 20: {
+[f ]
 "21
-[; ;setting_hardaware/adc.c: 21:     while(ADCON0bits.GO_nDONE==1);
-[e $U 283  ]
-[e :U 284 ]
-[e :U 283 ]
-[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 284  ]
-[e :U 285 ]
+[; ;setting_hardaware/adc.c: 21:     int digital;
+[v _digital `i ~T0 @X0 1 a ]
 "23
-[; ;setting_hardaware/adc.c: 23:     digital = (ADRESH*256) | (ADRESL);
-[e = _digital | * -> _ADRESH `i -> 256 `i -> _ADRESL `i ]
+[; ;setting_hardaware/adc.c: 23:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
 "24
-[; ;setting_hardaware/adc.c: 24:     return(digital);
+[; ;setting_hardaware/adc.c: 24:     ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+"26
+[; ;setting_hardaware/adc.c: 26:     while(ADCON0bits.GO_nDONE==1);
+[e $U 285  ]
+[e :U 286 ]
+[e :U 285 ]
+[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 286  ]
+[e :U 287 ]
+"28
+[; ;setting_hardaware/adc.c: 28:     digital = (ADRESH*256) | (ADRESL);
+[e = _digital | * -> _ADRESH `i -> 256 `i -> _ADRESL `i ]
+"30
+[; ;setting_hardaware/adc.c: 30:     return(digital);
 [e ) _digital ]
-[e $UE 282  ]
-"25
-[; ;setting_hardaware/adc.c: 25: }
-[e :UE 282 ]
+[e $UE 284  ]
+"31
+[; ;setting_hardaware/adc.c: 31: }
+[e :UE 284 ]
 }
+"33
+[; ;setting_hardaware/adc.c: 33: void Check_ADC(int prev_sensor_val){
+[v _Check_ADC `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _Check_ADC ]
+[v _prev_sensor_val `i ~T0 @X0 1 r1 ]
+[f ]
+"35
+[; ;setting_hardaware/adc.c: 35:     int bend_sensor_val=ADC_Read(bend_sensor_val);
+[v _bend_sensor_val `i ~T0 @X0 1 a ]
+[e = _bend_sensor_val ( _ADC_Read (1 _bend_sensor_val ]
+"37
+[; ;setting_hardaware/adc.c: 37:     char tmp[10];
+[v _tmp `uc ~T0 @X0 -> 10 `i a ]
+"38
+[; ;setting_hardaware/adc.c: 38:     sprintf(tmp, "%d\r\n", bend_sensor_val);
+[e ( _sprintf (1 , (. , &U _tmp :s 1C _bend_sensor_val ]
+"39
+[; ;setting_hardaware/adc.c: 39:     UART_Write_Text(tmp);
+[e ( _UART_Write_Text (1 &U _tmp ]
+"41
+[; ;setting_hardaware/adc.c: 41:     if(prev_sensor_val<bend_sensor_val-5 || prev_sensor_val>bend_sensor_val+5)
+[e $ ! || < _prev_sensor_val - _bend_sensor_val -> 5 `i > _prev_sensor_val + _bend_sensor_val -> 5 `i 289  ]
+"42
+[; ;setting_hardaware/adc.c: 42:     {
+{
+"43
+[; ;setting_hardaware/adc.c: 43:         prev_sensor_val=bend_sensor_val;
+[e = _prev_sensor_val _bend_sensor_val ]
+"44
+[; ;setting_hardaware/adc.c: 44:     }
+}
+[e :U 289 ]
+"46
+[; ;setting_hardaware/adc.c: 46:     if(prev_sensor_val<=0x0130)
+[e $ ! <= _prev_sensor_val -> 304 `i 290  ]
+"47
+[; ;setting_hardaware/adc.c: 47:     {
+{
+"48
+[; ;setting_hardaware/adc.c: 48:         UART_Write_Text("BN\r\n");
+[e ( _UART_Write_Text (1 :s 2C ]
+"49
+[; ;setting_hardaware/adc.c: 49:     }
+}
+[e $U 291  ]
+"50
+[; ;setting_hardaware/adc.c: 50:     else
+[e :U 290 ]
+"51
+[; ;setting_hardaware/adc.c: 51:     {
+{
+"52
+[; ;setting_hardaware/adc.c: 52:         UART_Write_Text("BF\r\n");
+[e ( _UART_Write_Text (1 :s 3C ]
+"53
+[; ;setting_hardaware/adc.c: 53:     }
+}
+[e :U 291 ]
+"54
+[; ;setting_hardaware/adc.c: 54: }
+[e :UE 288 ]
+}
+[p f _sprintf 8388736 ]
+[a 1C 37 100 13 10 0 ]
+[a 2C 66 78 13 10 0 ]
+[a 3C 66 70 13 10 0 ]

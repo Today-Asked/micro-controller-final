@@ -4719,6 +4719,7 @@ void CCP1_Initialize();
 # 34 "setting_hardaware/adc.h"
 void ADC_Initialize() ;
 int ADC_Read(int channel);
+void Check_ADC();
 # 10 "setting_hardaware/setting.h" 2
 
 # 1 "setting_hardaware/interrupt_manager.h" 1
@@ -4729,6 +4730,23 @@ void INTERRUPT_Initialize(void);
 
 # 1 "setting_hardaware/pin_manager.h" 1
 # 12 "setting_hardaware/setting.h" 2
+
+# 1 "setting_hardaware/gyroscope.h" 1
+
+
+
+
+
+void Gyroscope_Initialize(void);
+void Check_Gyroscope(int blinked_dir);
+void I2C_Init(void);
+void I2C_Start(void);
+void I2C_Stop(void);
+void I2C_Write(uint8_t data);
+uint8_t I2C_Read(uint8_t ack);
+void Calibration(void);
+float calculate_angle(int16_t accX, int16_t accZ);
+# 13 "setting_hardaware/setting.h" 2
 
 
 void SYSTEM_Initialize(void);
@@ -4746,6 +4764,7 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     UART_Initialize();
 
+    ADC_Initialize();
 
 }
 

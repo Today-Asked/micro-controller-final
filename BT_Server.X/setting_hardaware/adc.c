@@ -1,4 +1,6 @@
 #include <xc.h>
+#include <stdio.h>
+#include "uart.h"
 
 void ADC_Initialize(void)
 {
@@ -28,18 +30,20 @@ int ADC_Read(int channel)
     return(digital);
 }
 
-void Check_ADC(){
-    int bend_sensor_val;
-    int prev_bend_sensor_val;
+void Check_ADC(int prev_sensor_val){
 
-    bend_sensor_val=ADC_Read(bend_sensor_val);
+    int bend_sensor_val=ADC_Read(bend_sensor_val);
     
-    if(prev_bend_sensor_val<bend_sensor_val-5 || prev_bend_sensor_val>bend_sensor_val+5)
+    char tmp[10];
+    sprintf(tmp, "%d\r\n", bend_sensor_val);
+    UART_Write_Text(tmp);
+    
+    if(prev_sensor_val<bend_sensor_val-5 || prev_sensor_val>bend_sensor_val+5)
     {
-        prev_bend_sensor_val=bend_sensor_val;
+        prev_sensor_val=bend_sensor_val;
     }
     
-    if(prev_bend_sensor_val<=12)
+    if(prev_sensor_val<=0x0130)
     {
         UART_Write_Text("BN\r\n"); // turn on the brake light
     }

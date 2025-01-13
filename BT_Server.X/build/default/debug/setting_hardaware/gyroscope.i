@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "setting_hardaware/gyroscope.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 1 "./setting_hardaware/setting.h" 1
-
-
+# 1 "setting_hardaware/gyroscope.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4630,50 +4627,385 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 3 "./setting_hardaware/setting.h" 2
+# 1 "setting_hardaware/gyroscope.c" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\math.h" 1 3
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\math.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 39 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef float float_t;
+
+
+
+
+typedef double double_t;
+# 16 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\math.h" 2 3
+# 42 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\math.h" 3
+int __fpclassifyf(float);
 
 
 
 
 
-# 1 "./setting_hardaware/uart.h" 1
+
+
+int __signbitf(float);
+# 59 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\math.h" 3
+double acos(double);
+float acosf(float);
+long double acosl(long double);
 
 
 
-void UART_Initialize(void);
-char * GetString();
-void UART_Write(unsigned char data);
-void UART_Write_Text(char* text);
-void ClearBuffer();
-void MyusartRead();
-# 8 "./setting_hardaware/setting.h" 2
-
-# 1 "./setting_hardaware/ccp1.h" 1
+double acosh(double);
+float acoshf(float);
+long double acoshl(long double);
 
 
 
+double asin(double);
+float asinf(float);
+long double asinl(long double);
 
 
-void CCP1_Initialize();
-# 9 "./setting_hardaware/setting.h" 2
 
-# 1 "./setting_hardaware/adc.h" 1
-# 34 "./setting_hardaware/adc.h"
-void ADC_Initialize() ;
-int ADC_Read(int channel);
-void Check_ADC();
-# 10 "./setting_hardaware/setting.h" 2
-
-# 1 "./setting_hardaware/interrupt_manager.h" 1
+double asinh(double);
+float asinhf(float);
+long double asinhl(long double);
 
 
-void INTERRUPT_Initialize(void);
-# 11 "./setting_hardaware/setting.h" 2
 
-# 1 "./setting_hardaware/pin_manager.h" 1
-# 12 "./setting_hardaware/setting.h" 2
+double atan(double);
+float atanf(float);
+long double atanl(long double);
 
-# 1 "./setting_hardaware/gyroscope.h" 1
+
+
+double atan2(double, double);
+float atan2f(float, float);
+long double atan2l(long double, long double);
+
+
+
+double atanh(double);
+float atanhf(float);
+long double atanhl(long double);
+
+
+
+double cbrt(double);
+float cbrtf(float);
+long double cbrtl(long double);
+
+
+
+double ceil(double);
+float ceilf(float);
+long double ceill(long double);
+
+
+
+double copysign(double, double);
+float copysignf(float, float);
+long double copysignl(long double, long double);
+
+
+
+double cos(double);
+float cosf(float);
+long double cosl(long double);
+
+
+
+double cosh(double);
+float coshf(float);
+long double coshl(long double);
+
+
+
+double erf(double);
+float erff(float);
+long double erfl(long double);
+
+
+
+double erfc(double);
+float erfcf(float);
+long double erfcl(long double);
+
+
+
+double exp(double);
+float expf(float);
+long double expl(long double);
+
+
+
+double exp2(double);
+float exp2f(float);
+long double exp2l(long double);
+
+
+
+double expm1(double);
+float expm1f(float);
+long double expm1l(long double);
+
+
+
+double fabs(double);
+float fabsf(float);
+long double fabsl(long double);
+
+
+
+double fdim(double, double);
+float fdimf(float, float);
+long double fdiml(long double, long double);
+
+
+
+double floor(double);
+float floorf(float);
+long double floorl(long double);
+
+
+
+double fma(double, double, double);
+float fmaf(float, float, float);
+long double fmal(long double, long double, long double);
+
+
+
+double fmax(double, double);
+float fmaxf(float, float);
+long double fmaxl(long double, long double);
+
+
+
+double fmin(double, double);
+float fminf(float, float);
+long double fminl(long double, long double);
+
+
+
+double fmod(double, double);
+float fmodf(float, float);
+long double fmodl(long double, long double);
+
+
+
+double frexp(double, int *);
+float frexpf(float, int *);
+long double frexpl(long double, int *);
+
+
+
+double hypot(double, double);
+float hypotf(float, float);
+long double hypotl(long double, long double);
+
+
+
+int ilogb(double);
+int ilogbf(float);
+int ilogbl(long double);
+
+
+
+double ldexp(double, int);
+float ldexpf(float, int);
+long double ldexpl(long double, int);
+
+
+
+
+double lgamma(double);
+float lgammaf(float);
+long double lgammal(long double);
+
+
+
+
+long long llrint(double);
+long long llrintf(float);
+long long llrintl(long double);
+
+
+
+long long llround(double);
+long long llroundf(float);
+long long llroundl(long double);
+
+
+
+
+double log(double);
+float logf(float);
+long double logl(long double);
+
+
+
+double log10(double);
+float log10f(float);
+long double log10l(long double);
+
+
+
+double log1p(double);
+float log1pf(float);
+long double log1pl(long double);
+
+
+
+double log2(double);
+float log2f(float);
+long double log2l(long double);
+
+
+
+double logb(double);
+float logbf(float);
+long double logbl(long double);
+
+
+
+long lrint(double);
+long lrintf(float);
+long lrintl(long double);
+
+
+
+long lround(double);
+long lroundf(float);
+long lroundl(long double);
+
+
+
+double modf(double, double *);
+float modff(float, float *);
+long double modfl(long double, long double *);
+
+
+
+double nan(const char *);
+float nanf(const char *);
+long double nanl(const char *);
+
+
+
+double nearbyint(double);
+float nearbyintf(float);
+long double nearbyintl(long double);
+
+
+
+double nextafter(double, double);
+float nextafterf(float, float);
+long double nextafterl(long double, long double);
+
+
+
+double nexttoward(double, long double);
+float nexttowardf(float, long double);
+long double nexttowardl(long double, long double);
+# 326 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\math.h" 3
+double pow(double, double);
+__attribute__((nonreentrant)) float powf(float, float);
+long double powl(long double, long double);
+
+
+
+double remainder(double, double);
+float remainderf(float, float);
+long double remainderl(long double, long double);
+
+
+
+double remquo(double, double, int *);
+float remquof(float, float, int *);
+long double remquol(long double, long double, int *);
+
+
+
+double rint(double);
+float rintf(float);
+long double rintl(long double);
+
+
+
+double round(double);
+float roundf(float);
+long double roundl(long double);
+
+
+
+double scalbln(double, long);
+float scalblnf(float, long);
+long double scalblnl(long double, long);
+
+
+
+double scalbn(double, int);
+float scalbnf(float, int);
+long double scalbnl(long double, int);
+
+
+
+double sin(double);
+float sinf(float);
+long double sinl(long double);
+
+
+
+double sinh(double);
+float sinhf(float);
+long double sinhl(long double);
+
+
+
+double sqrt(double);
+float sqrtf(float);
+long double sqrtl(long double);
+
+
+
+double tan(double);
+float tanf(float);
+long double tanl(long double);
+
+
+
+double tanh(double);
+float tanhf(float);
+long double tanhl(long double);
+
+
+
+double tgamma(double);
+float tgammaf(float);
+long double tgammal(long double);
+
+
+
+double trunc(double);
+float truncf(float);
+long double truncl(long double);
+# 431 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\math.h" 3
+extern int signgam;
+
+double j0(double);
+double j1(double);
+double jn(int, double);
+
+double y0(double);
+double y1(double);
+double yn(int, double);
+# 3 "setting_hardaware/gyroscope.c" 2
+
+
+# 1 "setting_hardaware/gyroscope.h" 1
 
 
 
@@ -4688,329 +5020,137 @@ void I2C_Write(uint8_t data);
 uint8_t I2C_Read(uint8_t ack);
 void Calibration(void);
 float calculate_angle(int16_t accX, int16_t accZ);
-# 13 "./setting_hardaware/setting.h" 2
+# 5 "setting_hardaware/gyroscope.c" 2
 
+# 1 "setting_hardaware/uart.h" 1
 
-void SYSTEM_Initialize(void);
-void OSCILLATOR_Initialize(void);
-# 1 "main.c" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
+void UART_Initialize(void);
+char * GetString();
+void UART_Write(unsigned char data);
+void UART_Write_Text(char* text);
+void ClearBuffer();
+void MyusartRead();
+# 6 "setting_hardaware/gyroscope.c" 2
+# 20 "setting_hardaware/gyroscope.c"
+float pitch_offset = 0.0;
 
+int16_t accX, accZ;
+uint8_t accX_high, accX_low, accZ_high, accZ_low;
+float angle;
 
+void Gyroscope_Initialize(void) {
+    OSCCON = 0x60;
 
+    I2C_Init();
+    _delay((unsigned long)((100)*(4000000/4000.0)));
 
-typedef void * __isoc_va_list[1];
-# 143 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 ssize_t;
-# 255 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 409 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
 
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
+    I2C_Start();
+    I2C_Write(0x68 << 1);
+    I2C_Write(0x6B);
+    I2C_Write(0x00);
+    I2C_Stop();
 
 
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-
-
-
-
-
-int ungetc(int, FILE *);
-int getch(void);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-
-
-
-
-void putch(char);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-__attribute__((__format__(__printf__, 1, 2)))
-int printf(const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int fprintf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int sprintf(char *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 3, 4)))
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-__attribute__((__format__(__printf__, 1, 0)))
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 2, 0)))
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 3, 0)))
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-__attribute__((__format__(__scanf__, 1, 2)))
-int scanf(const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int fscanf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int sscanf(const char *restrict, const char *restrict, ...);
-
-__attribute__((__format__(__scanf__, 1, 0)))
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__scanf__, 2, 0)))
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 3 "main.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 421 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 26 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 2 3
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-
-
-
-
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 4 "main.c" 2
-
-
-
-
-int count = 0;
-int isConnected = 0;
-int needSendMsg = 0;
-
-char str[20];
-
-void displayBinary(int num) {
-
-    LATAbits.LATA1 = (num & 0x01) ? 1 : 0;
-    LATAbits.LATA2 = (num & 0x02) ? 1 : 0;
-    LATAbits.LATA3 = (num & 0x04) ? 1 : 0;
-    LATAbits.LATA4 = (num & 0x08) ? 1 : 0;
+    TRISA = 0x00;
+    LATA = 0x00;
+    Calibration();
 }
 
-void main(void)
-{
+void Check_Gyroscope(int blinker_dir){
+    I2C_Start();
+    I2C_Write(0x68 << 1);
+    I2C_Write(0x3B);
+    I2C_Start();
+    I2C_Write((0x68 << 1) | 1);
 
-    SYSTEM_Initialize() ;
+    accX_high = I2C_Read(1);
+    accX_low = I2C_Read(1);
+    accZ_high = I2C_Read(1);
+    accZ_low = I2C_Read(0);
+    I2C_Stop();
 
-    int blinker_dir = 0;
-    int prev_bend_sensor_val;
 
-    while(1) {
-        if(isConnected == 1 && needSendMsg == 1){
-            displayBinary(0);
-            UART_Write_Text("LRN\r\n");
-            needSendMsg = 0;
-        }
+    accX = (accX_high << 8) | accX_low;
+    accZ = (accZ_high << 8) | accZ_low;
 
-        Check_ADC(prev_bend_sensor_val);
 
-        Check_Gyroscope(blinker_dir);
-        _delay((unsigned long)((20)*(4000000/4000.0)));
+    angle = calculate_angle(accX, accZ) - pitch_offset;
+
+
+    if (angle > 45.0) {
+        UART_Write_Text("LLN\r\n");
+    } else if (angle < -45.0) {
+        UART_Write_Text("LRN\r\n");
+    } else {
+
     }
-    return;
+
+    _delay((unsigned long)((100)*(4000000/4000.0)));
 }
 
-void __attribute__((picinterrupt(("high_priority")))) Hi_ISR(void)
-{
-    if (INTCONbits.RBIF) {
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-        if(count == 0){
-            UART_Write_Text("AT\r\n");
-        }
-        else if(count == 1){
-            UART_Write_Text("AT+INQ\r\n");
-        }
-        else if(count == 2){
-            UART_Write_Text("AT+CONN1\r\n");
-            count = -1;
-        }
-        count++;
-
-        INTCONbits.INT0IF = 0;
-    }
+float calculate_angle(int16_t accX, int16_t accZ) {
+    return atan2f((float)(accX - 0),(float)(accZ - 0)) * 180.0 / 3.14159265358979323846;
 }
 
 
-void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void)
-{
-    if(RCIF)
-    {
-        if(RCSTAbits.OERR)
-        {
-            CREN = 0;
-            __nop();
-            CREN = 1;
-        }
+void I2C_Init(void) {
+    SSPCON1 = 0x28;
+    SSPCON2 = 0x00;
 
-        MyusartRead();
-        char command[20];
-        if(RCREG == '\r' || RCREG == '\n'){
-            strcpy(command, GetString());
-            ClearBuffer();
-        }
-        if(command[0] == 'O' && command[1] == 'K' && strlen(command) == 2){
-            LATAbits.LATA1 = 1;
-            ClearBuffer();
-            strcpy(command, "");
-            return;
-        }
-        else if(command[0] == '+' && command[1] == 'I' && command[2] == 'N' && command[3] == 'Q' && command[4] == 'E'){
-            LATAbits.LATA2 = 1;
-            ClearBuffer();
-            strcpy(command, "");
-            return;
-        }
-        else if(command[0] == '+' && command[1] == 'C' && command[2] == 'o' && command[3] == 'n'){
-            LATAbits.LATA3 = 1;
-            PIE1bits.RCIE = 0;
-            isConnected = 1;
-            needSendMsg = 1;
-            ClearBuffer();
-            strcpy(command, "");
-            return;
-        }
-    }
+    SSPADD = 9;
+    SSPSTAT = 0x00;
+}
 
 
+void I2C_Start(void) {
+    SEN = 1;
+    while(SEN);
+}
 
-    return;
+
+void I2C_Stop(void) {
+    PEN = 1;
+    while(PEN);
+}
+
+void I2C_Write(uint8_t data) {
+    SSPBUF = data;
+    while(BF);
+    while(SSPCON2bits.ACKSTAT);
+}
+
+
+uint8_t I2C_Read(uint8_t ack) {
+    uint8_t data;
+    RCEN = 1;
+    while(!BF);
+    data = SSPBUF;
+
+
+    ACKDT = ack ? 0 : 1;
+    ACKEN = 1;
+    while(ACKEN);
+    return data;
+}
+
+void Calibration(void){
+    int16_t accX, accZ;
+    uint8_t accX_high, accX_low, accZ_high, accZ_low;
+    I2C_Start();
+    I2C_Write(0x68 << 1);
+    I2C_Write(0x3B);
+    I2C_Start();
+    I2C_Write((0x68 << 1) | 1);
+    accX_high = I2C_Read(1);
+    accX_low = I2C_Read(1);
+    accZ_high = I2C_Read(1);
+    accZ_low = I2C_Read(0);
+    I2C_Stop();
+
+    accX = (accX_high << 8) | accX_low;
+    accZ = (accZ_high << 8) | accZ_low;
+    pitch_offset = atan2f((float)accX,(float)accZ) * 180.0 / 3.14159265358979323846;
 }
