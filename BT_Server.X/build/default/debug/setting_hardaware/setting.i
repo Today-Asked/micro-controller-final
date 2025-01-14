@@ -4762,7 +4762,7 @@ void SYSTEM_Initialize(void)
 
 
     INTERRUPT_Initialize();
-    UART_Initialize();
+
 
     ADC_Initialize();
     Gyroscope_Initialize();

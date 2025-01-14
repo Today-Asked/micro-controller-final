@@ -5,8 +5,10 @@
 #include "gyroscope.h"
 #include "uart.h"
 
-#define LEFT LATAbits.LATA5;
-#define RIGHT LATAbits.LATA7;
+#define LEFT_ON() LATAbits.LATA5 = 1;
+#define LEFT_OFF() LATAbits.LATA5 = 0;
+#define RIGHT_ON() LATAbits.LATA7 = 1;
+#define RIGHT_OFF() LATAbits.LATA7 = 0;
 
 #define _XTAL_FREQ 4000000
 #define MPU_ADDR 0x68
@@ -63,15 +65,15 @@ void Check_Gyroscope(int blinker_dir){
 
     
     if (angle > 30.0) {
-        LEFT = 1;
-        RIGHT = 0;
+        LEFT_ON();
+        RIGHT_OFF();
     }
     else if (angle < -30.0) {
-        LEFT = 0;
-        RIGHT = 1;
+        LEFT_OFF();
+        RIGHT_ON();
     } else{
-        LEFT = 0;
-        RIGHT = 0;
+        LEFT_OFF();
+        RIGHT_OFF();
     }
 
 }

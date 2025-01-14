@@ -4796,6 +4796,9 @@ void MyusartRead();
 # 3 "setting_hardaware/adc.c" 2
 
 
+
+
+
 void ADC_Initialize(void)
 {
     TRISAbits.RA0 = 1;
@@ -4835,10 +4838,10 @@ void Check_ADC(int prev_sensor_val){
 
     if(prev_sensor_val<=0x0130)
     {
-        UART_Write_Text("5\r\n");
+        LATAbits.LATA6 = 1;;
     }
     else
     {
-        UART_Write_Text("6\r\n");
+        LATAbits.LATA6 = 0;;
     }
 }

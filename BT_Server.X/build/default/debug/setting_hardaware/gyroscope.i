@@ -5033,7 +5033,7 @@ void UART_Write_Text(char* text);
 void ClearBuffer();
 void MyusartRead();
 # 6 "setting_hardaware/gyroscope.c" 2
-# 20 "setting_hardaware/gyroscope.c"
+# 21 "setting_hardaware/gyroscope.c"
 float pitch_offset = 0.0;
 
 int16_t accX, accY, accZ;
@@ -5081,16 +5081,17 @@ void Check_Gyroscope(int blinker_dir){
 
 
     if (angle > 30.0) {
-        UART_Write_Text("1\r\n");
+        LATAbits.LATA5 = 1;;
+        LATAbits.LATA7 = 0;;
     }
     else if (angle < -30.0) {
-        UART_Write_Text("3\r\n");
+        LATAbits.LATA5 = 0;;
+        LATAbits.LATA7 = 1;;
+    } else{
+        LATAbits.LATA5 = 0;;
+        LATAbits.LATA7 = 0;;
     }
 
-
-
-
-    _delay((unsigned long)((100)*(4000000/4000.0)));
 }
 
 float calculate_angle(int16_t accX, int16_t accY, int16_t accZ) {

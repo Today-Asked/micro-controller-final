@@ -5,9 +5,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3 setting_hardaware/interrupt_manager.h
 [; ;setting_hardaware/interrupt_manager.h: 3: void INTERRUPT_Initialize(void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
-"4 setting_hardaware/uart.h
-[; ;setting_hardaware/uart.h: 4: void UART_Initialize(void);
-[v _UART_Initialize `(v ~T0 @X0 0 ef ]
 "34 setting_hardaware/adc.h
 [; ;setting_hardaware/adc.h: 34: void ADC_Initialize() ;
 [v _ADC_Initialize `(v ~T0 @X0 0 e? ]
@@ -518,9 +515,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "67
 [; ;setting_hardaware/setting.c: 67:     INTERRUPT_Initialize();
 [e ( _INTERRUPT_Initialize ..  ]
-"68
-[; ;setting_hardaware/setting.c: 68:     UART_Initialize();
-[e ( _UART_Initialize ..  ]
 "70
 [; ;setting_hardaware/setting.c: 70:     ADC_Initialize();
 [e ( _ADC_Initialize ..  ]

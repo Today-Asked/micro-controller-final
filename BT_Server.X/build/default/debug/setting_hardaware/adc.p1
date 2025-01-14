@@ -80,9 +80,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4819
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4819: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
 [v _ADCON0bits `VS188 ~T0 @X0 0 e@4034 ]
-"7 setting_hardaware/uart.h
-[; ;setting_hardaware/uart.h: 7: void UART_Write_Text(char* text);
-[v _UART_Write_Text `(v ~T0 @X0 0 ef1`*uc ]
+"983
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 983:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S45 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+"993
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 993:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . LA0 LA1 LA2 LA3 LA4 LA5 LA6 LA7 ]
+"982
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 982: typedef union {
+[u S44 `S45 1 `S46 1 ]
+[n S44 . . . ]
+"1004
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1004: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
+[v _LATAbits `VS44 ~T0 @X0 0 e@3977 ]
 "54 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -497,132 +509,130 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"5 setting_hardaware/adc.c
-[; ;setting_hardaware/adc.c: 5: void ADC_Initialize(void)
+"8 setting_hardaware/adc.c
+[; ;setting_hardaware/adc.c: 8: void ADC_Initialize(void)
 [v _ADC_Initialize `(v ~T0 @X0 1 ef ]
-"6
-[; ;setting_hardaware/adc.c: 6: {
+"9
+[; ;setting_hardaware/adc.c: 9: {
 {
 [e :U _ADC_Initialize ]
 [f ]
-"7
-[; ;setting_hardaware/adc.c: 7:     TRISAbits.RA0 = 1;
+"10
+[; ;setting_hardaware/adc.c: 10:     TRISAbits.RA0 = 1;
 [e = . . _TRISAbits 1 0 -> -> 1 `i `uc ]
-"9
-[; ;setting_hardaware/adc.c: 9:     ADCON1 = 0x0e;
-[e = _ADCON1 -> -> 14 `i `uc ]
-"11
-[; ;setting_hardaware/adc.c: 11:     ADFM = 1 ;
-[e = _ADFM -> -> 1 `i `b ]
 "12
-[; ;setting_hardaware/adc.c: 12:     ADCON2bits.ADCS = 7;
-[e = . . _ADCON2bits 0 0 -> -> 7 `i `uc ]
-"13
-[; ;setting_hardaware/adc.c: 13:     ADCON2bits.ACQT = 0b001;
-[e = . . _ADCON2bits 0 1 -> -> 1 `i `uc ]
+[; ;setting_hardaware/adc.c: 12:     ADCON1 = 0x0e;
+[e = _ADCON1 -> -> 14 `i `uc ]
+"14
+[; ;setting_hardaware/adc.c: 14:     ADFM = 1 ;
+[e = _ADFM -> -> 1 `i `b ]
 "15
-[; ;setting_hardaware/adc.c: 15:     ADRESH=0;
-[e = _ADRESH -> -> 0 `i `uc ]
+[; ;setting_hardaware/adc.c: 15:     ADCON2bits.ADCS = 7;
+[e = . . _ADCON2bits 0 0 -> -> 7 `i `uc ]
 "16
-[; ;setting_hardaware/adc.c: 16:     ADRESL=0;
+[; ;setting_hardaware/adc.c: 16:     ADCON2bits.ACQT = 0b001;
+[e = . . _ADCON2bits 0 1 -> -> 1 `i `uc ]
+"18
+[; ;setting_hardaware/adc.c: 18:     ADRESH=0;
+[e = _ADRESH -> -> 0 `i `uc ]
+"19
+[; ;setting_hardaware/adc.c: 19:     ADRESL=0;
 [e = _ADRESL -> -> 0 `i `uc ]
-"17
-[; ;setting_hardaware/adc.c: 17: }
+"20
+[; ;setting_hardaware/adc.c: 20: }
 [e :UE 283 ]
 }
-"19
-[; ;setting_hardaware/adc.c: 19: int ADC_Read(int channel)
+"22
+[; ;setting_hardaware/adc.c: 22: int ADC_Read(int channel)
 [v _ADC_Read `(i ~T0 @X0 1 ef1`i ]
-"20
-[; ;setting_hardaware/adc.c: 20: {
+"23
+[; ;setting_hardaware/adc.c: 23: {
 {
 [e :U _ADC_Read ]
-"19
-[; ;setting_hardaware/adc.c: 19: int ADC_Read(int channel)
+"22
+[; ;setting_hardaware/adc.c: 22: int ADC_Read(int channel)
 [v _channel `i ~T0 @X0 1 r1 ]
-"20
-[; ;setting_hardaware/adc.c: 20: {
-[f ]
-"21
-[; ;setting_hardaware/adc.c: 21:     int digital;
-[v _digital `i ~T0 @X0 1 a ]
 "23
-[; ;setting_hardaware/adc.c: 23:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;setting_hardaware/adc.c: 23: {
+[f ]
 "24
-[; ;setting_hardaware/adc.c: 24:     ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+[; ;setting_hardaware/adc.c: 24:     int digital;
+[v _digital `i ~T0 @X0 1 a ]
 "26
-[; ;setting_hardaware/adc.c: 26:     while(ADCON0bits.GO_nDONE==1);
+[; ;setting_hardaware/adc.c: 26:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+"27
+[; ;setting_hardaware/adc.c: 27:     ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+"29
+[; ;setting_hardaware/adc.c: 29:     while(ADCON0bits.GO_nDONE==1);
 [e $U 285  ]
 [e :U 286 ]
 [e :U 285 ]
 [e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 286  ]
 [e :U 287 ]
-"28
-[; ;setting_hardaware/adc.c: 28:     digital = (ADRESH*256) | (ADRESL);
+"31
+[; ;setting_hardaware/adc.c: 31:     digital = (ADRESH*256) | (ADRESL);
 [e = _digital | * -> _ADRESH `i -> 256 `i -> _ADRESL `i ]
-"30
-[; ;setting_hardaware/adc.c: 30:     return(digital);
+"33
+[; ;setting_hardaware/adc.c: 33:     return(digital);
 [e ) _digital ]
 [e $UE 284  ]
-"31
-[; ;setting_hardaware/adc.c: 31: }
+"34
+[; ;setting_hardaware/adc.c: 34: }
 [e :UE 284 ]
 }
-"33
-[; ;setting_hardaware/adc.c: 33: void Check_ADC(int prev_sensor_val){
+"36
+[; ;setting_hardaware/adc.c: 36: void Check_ADC(int prev_sensor_val){
 [v _Check_ADC `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _Check_ADC ]
 [v _prev_sensor_val `i ~T0 @X0 1 r1 ]
 [f ]
-"35
-[; ;setting_hardaware/adc.c: 35:     int bend_sensor_val=ADC_Read(bend_sensor_val);
+"38
+[; ;setting_hardaware/adc.c: 38:     int bend_sensor_val=ADC_Read(bend_sensor_val);
 [v _bend_sensor_val `i ~T0 @X0 1 a ]
 [e = _bend_sensor_val ( _ADC_Read (1 _bend_sensor_val ]
-"37
-[; ;setting_hardaware/adc.c: 37:     if(prev_sensor_val<bend_sensor_val-5 || prev_sensor_val>bend_sensor_val+5)
-[e $ ! || < _prev_sensor_val - _bend_sensor_val -> 5 `i > _prev_sensor_val + _bend_sensor_val -> 5 `i 289  ]
-"38
-[; ;setting_hardaware/adc.c: 38:     {
-{
-"39
-[; ;setting_hardaware/adc.c: 39:         prev_sensor_val=bend_sensor_val;
-[e = _prev_sensor_val _bend_sensor_val ]
 "40
-[; ;setting_hardaware/adc.c: 40:     }
+[; ;setting_hardaware/adc.c: 40:     if(prev_sensor_val<bend_sensor_val-5 || prev_sensor_val>bend_sensor_val+5)
+[e $ ! || < _prev_sensor_val - _bend_sensor_val -> 5 `i > _prev_sensor_val + _bend_sensor_val -> 5 `i 289  ]
+"41
+[; ;setting_hardaware/adc.c: 41:     {
+{
+"42
+[; ;setting_hardaware/adc.c: 42:         prev_sensor_val=bend_sensor_val;
+[e = _prev_sensor_val _bend_sensor_val ]
+"43
+[; ;setting_hardaware/adc.c: 43:     }
 }
 [e :U 289 ]
-"42
-[; ;setting_hardaware/adc.c: 42:     if(prev_sensor_val<=0x0130)
-[e $ ! <= _prev_sensor_val -> 304 `i 290  ]
-"43
-[; ;setting_hardaware/adc.c: 43:     {
-{
-"44
-[; ;setting_hardaware/adc.c: 44:         UART_Write_Text("5\r\n");
-[e ( _UART_Write_Text (1 :s 1C ]
 "45
-[; ;setting_hardaware/adc.c: 45:     }
+[; ;setting_hardaware/adc.c: 45:     if(prev_sensor_val<=0x0130)
+[e $ ! <= _prev_sensor_val -> 304 `i 290  ]
+"46
+[; ;setting_hardaware/adc.c: 46:     {
+{
+"47
+[; ;setting_hardaware/adc.c: 47:         LATAbits.LATA6 = 1;;
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+"48
+[; ;setting_hardaware/adc.c: 48:     }
 }
 [e $U 291  ]
-"46
-[; ;setting_hardaware/adc.c: 46:     else
-[e :U 290 ]
-"47
-[; ;setting_hardaware/adc.c: 47:     {
-{
-"48
-[; ;setting_hardaware/adc.c: 48:         UART_Write_Text("6\r\n");
-[e ( _UART_Write_Text (1 :s 2C ]
 "49
-[; ;setting_hardaware/adc.c: 49:     }
+[; ;setting_hardaware/adc.c: 49:     else
+[e :U 290 ]
+"50
+[; ;setting_hardaware/adc.c: 50:     {
+{
+"51
+[; ;setting_hardaware/adc.c: 51:         LATAbits.LATA6 = 0;;
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"52
+[; ;setting_hardaware/adc.c: 52:     }
 }
 [e :U 291 ]
-"50
-[; ;setting_hardaware/adc.c: 50: }
+"53
+[; ;setting_hardaware/adc.c: 53: }
 [e :UE 288 ]
 }
-[a 2C 54 13 10 0 ]
-[a 1C 53 13 10 0 ]
