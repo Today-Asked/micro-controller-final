@@ -613,24 +613,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/adc.c: 46:     {
 {
 "47
-[; ;setting_hardaware/adc.c: 47:         LATAbits.LATA6 = 1;;
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+[; ;setting_hardaware/adc.c: 47:         LATAbits.LATA7 = 1;;
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
 "48
 [; ;setting_hardaware/adc.c: 48:     }
 }
 [e $U 291  ]
 "49
-[; ;setting_hardaware/adc.c: 49:     else
+[; ;setting_hardaware/adc.c: 49:     else if(prev_sensor_val>=0x0170)
 [e :U 290 ]
+[e $ ! >= _prev_sensor_val -> 368 `i 292  ]
 "50
 [; ;setting_hardaware/adc.c: 50:     {
 {
 "51
-[; ;setting_hardaware/adc.c: 51:         LATAbits.LATA6 = 0;;
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+[; ;setting_hardaware/adc.c: 51:         LATAbits.LATA7 = 0;;
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
 "52
 [; ;setting_hardaware/adc.c: 52:     }
 }
+[e :U 292 ]
 [e :U 291 ]
 "53
 [; ;setting_hardaware/adc.c: 53: }

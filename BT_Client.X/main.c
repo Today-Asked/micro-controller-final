@@ -16,13 +16,13 @@ int state = 0;
 
 char str[20];
 
-// void displayBinary(int num) {
-//     // Assuming TRISD0-TRISD3 are connected to your LEDs (active low)
-//     LATAbits.LATA1 = (num & 0x01) ? 1 : 0; // Least significant bit
-//     LATAbits.LATA2 = (num & 0x02) ? 1 : 0;
-//     LATAbits.LATA3 = (num & 0x04) ? 1 : 0;
-//     LATAbits.LATA4 = (num & 0x08) ? 1 : 0; // Most significant bit
-// }
+ void displayBinary(int num) {
+     // Assuming TRISD0-TRISD3 are connected to your LEDs (active low)
+     LATAbits.LATA1 = (num & 0x01) ? 1 : 0; // Least significant bit
+     LATAbits.LATA2 = (num & 0x02) ? 1 : 0;
+     LATAbits.LATA3 = (num & 0x04) ? 1 : 0;
+     LATAbits.LATA4 = (num & 0x08) ? 1 : 0; // Most significant bit
+ }
 
 void initialState(){
 }

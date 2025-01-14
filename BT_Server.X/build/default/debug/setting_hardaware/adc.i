@@ -4838,10 +4838,10 @@ void Check_ADC(int prev_sensor_val){
 
     if(prev_sensor_val<=0x0130)
     {
-        LATAbits.LATA6 = 1;;
+        LATAbits.LATA7 = 1;;
     }
-    else
+    else if(prev_sensor_val>=0x0170)
     {
-        LATAbits.LATA6 = 0;;
+        LATAbits.LATA7 = 0;;
     }
 }
