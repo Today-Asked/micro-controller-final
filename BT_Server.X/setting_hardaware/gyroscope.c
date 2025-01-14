@@ -93,7 +93,6 @@ void Check_Gyroscope(int blinker_dir){
     } else {
         from_mid = 1;
     }
-
 }
 
 float calculate_angle(int16_t accX, int16_t accY, int16_t accZ) {
