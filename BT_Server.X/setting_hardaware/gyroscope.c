@@ -5,10 +5,11 @@
 #include "gyroscope.h"
 #include "uart.h"
 
-#define left_setlow() LATAbits.LATA5 = 0;
-#define right_setlow() LATAbits.LATA7 = 0;
-#define toggle_left() LATAbits.LATA5 = !LATAbits.LATA5;
-#define toggle_right() LATAbits.LATA7 = !LATAbits.LATA7;
+#define blink_left() LATAbits.LATA6 = 1;
+#define blink_right() LATAbits.LATA5 = 1;
+#define stop_blinking() LATAbits.LATA5 = 0; LATAbits.LATA6 = 0;
+#define brake_on() LATAbits.LATA7 = 1;
+#define brake_off() LATAbits.LATA7 = 0;
 
 #define _XTAL_FREQ 4000000
 #define MPU_ADDR 0x68
@@ -72,22 +73,22 @@ void Check_Gyroscope(int blinker_dir){
         if (dir == -1 && from_mid) {
             dir = 0;
             from_mid = 0;
-            left_setlow();
+            stop_blinking();
         } else if (dir == 0 && from_mid) {
             dir = -1;
             from_mid = 0;
-            right_setlow();
+            blink_left();
         }
         __delay_ms(300);
     } else if (angle < -30.0) { // right
         if (dir == 1 && from_mid) {
             dir = 0;
             from_mid = 0;
-            right_setlow();
+            stop_blinking();
         } else if (dir == 0 && from_mid) {
             dir = 1;
             from_mid = 0;
-            left_setlow();
+            blink_right();
         }
         __delay_ms(300);
     } else {
@@ -160,20 +161,4 @@ void Calibration(void){
     accY = (accY_high << 8) | accY_low;
     accZ = (accZ_high << 8) | accZ_low;
     pitch_offset =  calculate_angle(accX, accY, accZ);
-}
-
-void __interrupt(low_priority) Low_ISR(){
-    if(TMR2IF){
-        TMR2IF = 0;
-        postpostscaler = (postpostscaler+1)%8;
-        if(!postpostscaler){
-            if(dir == -1){
-                toggle_left();
-            }else if(dir == 1){
-                toggle_right();
-            }else{}
-        }
-        
-    }
-    return;
 }

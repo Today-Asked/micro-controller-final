@@ -5033,7 +5033,7 @@ void UART_Write_Text(char* text);
 void ClearBuffer();
 void MyusartRead();
 # 6 "setting_hardaware/gyroscope.c" 2
-# 21 "setting_hardaware/gyroscope.c"
+# 22 "setting_hardaware/gyroscope.c"
 float pitch_offset = 0.0;
 
 int16_t accX, accY, accZ;
@@ -5088,28 +5088,27 @@ void Check_Gyroscope(int blinker_dir){
         if (dir == -1 && from_mid) {
             dir = 0;
             from_mid = 0;
-            LATAbits.LATA5 = 0;;
+            LATAbits.LATA5 = 0; LATAbits.LATA6 = 0;;
         } else if (dir == 0 && from_mid) {
             dir = -1;
             from_mid = 0;
-            LATAbits.LATA7 = 0;;
+            LATAbits.LATA6 = 1;;
         }
         _delay((unsigned long)((300)*(4000000/4000.0)));
     } else if (angle < -30.0) {
         if (dir == 1 && from_mid) {
             dir = 0;
             from_mid = 0;
-            LATAbits.LATA7 = 0;;
+            LATAbits.LATA5 = 0; LATAbits.LATA6 = 0;;
         } else if (dir == 0 && from_mid) {
             dir = 1;
             from_mid = 0;
-            LATAbits.LATA5 = 0;;
+            LATAbits.LATA5 = 1;;
         }
         _delay((unsigned long)((300)*(4000000/4000.0)));
     } else {
         from_mid = 1;
     }
-
 }
 
 float calculate_angle(int16_t accX, int16_t accY, int16_t accZ) {
@@ -5177,20 +5176,4 @@ void Calibration(void){
     accY = (accY_high << 8) | accY_low;
     accZ = (accZ_high << 8) | accZ_low;
     pitch_offset = calculate_angle(accX, accY, accZ);
-}
-
-void __attribute__((picinterrupt(("low_priority")))) Low_ISR(){
-    if(TMR2IF){
-        TMR2IF = 0;
-        postpostscaler = (postpostscaler+1)%8;
-        if(!postpostscaler){
-            if(dir == -1){
-                LATAbits.LATA5 = !LATAbits.LATA5;;
-            }else if(dir == 1){
-                LATAbits.LATA7 = !LATAbits.LATA7;;
-            }else{}
-        }
-
-    }
-    return;
 }

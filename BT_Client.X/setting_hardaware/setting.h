@@ -13,6 +13,6 @@
 
 void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
-
+void TMR2_Initialize(void);
 
 #endif

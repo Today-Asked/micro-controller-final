@@ -4759,7 +4759,7 @@ void SYSTEM_Initialize(void)
 {
 
     OSCILLATOR_Initialize();
-    TMR2_Initialize();
+
 
 
     INTERRUPT_Initialize();
@@ -4774,15 +4774,4 @@ void OSCILLATOR_Initialize(void)
     IRCF2 = 1;
     IRCF1 = 1;
     IRCF0 = 0;
-
-
-}
-
-void TMR2_Initialize(){
-    PIR1bits.TMR2IF = 0;
-    IPR1bits.TMR2IP = 1;
-    PIE1bits.TMR2IE = 1;
-    T2CON = 255;
-    PR2 = 255;
-
 }

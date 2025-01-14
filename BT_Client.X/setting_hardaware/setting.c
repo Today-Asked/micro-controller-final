@@ -61,7 +61,7 @@ void SYSTEM_Initialize(void)
 {
     // PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize(); //default 1Mhz
-//    TMR2_Initialize();
+    TMR2_Initialize();
 //    TMR1_Initialize();
 //    TMR0_Initialize();
     INTERRUPT_Initialize();
@@ -77,4 +77,13 @@ void OSCILLATOR_Initialize(void)
     IRCF0 = 0;
 
     // RCON = 0x0000;
+}
+
+void TMR2_Initialize(){
+    PIR1bits.TMR2IF = 0;
+    IPR1bits.TMR2IP = 0;
+    PIE1bits.TMR2IE = 1;
+    T2CON = 255; // prescaler 1:16, postscaler 1:16
+    PR2 = 255; // freq * delay_sec / (prescaler * postscaler * 4)
+    // remember to change the OSCCON
 }
