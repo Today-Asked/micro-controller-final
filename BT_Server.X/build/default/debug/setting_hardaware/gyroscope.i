@@ -5040,6 +5040,9 @@ int16_t accX, accY, accZ;
 uint8_t accX_high, accX_low, accY_high, accY_low, accZ_high, accZ_low;
 float angle;
 
+int dir;
+int postpostscaler;
+
 void Gyroscope_Initialize(void) {
     OSCCON = 0x60;
 
@@ -5081,13 +5084,12 @@ void Check_Gyroscope(int blinker_dir){
 
 
     if (angle > 30.0) {
-        LATAbits.LATA5 = 1;;
-        LATAbits.LATA7 = 0;;
+        dir = -1;
     }
     else if (angle < -30.0) {
-        LATAbits.LATA5 = 0;;
-        LATAbits.LATA7 = 1;;
+        dir = 1;
     } else{
+        dir = 0;
         LATAbits.LATA5 = 0;;
         LATAbits.LATA7 = 0;;
     }
@@ -5159,4 +5161,20 @@ void Calibration(void){
     accY = (accY_high << 8) | accY_low;
     accZ = (accZ_high << 8) | accZ_low;
     pitch_offset = calculate_angle(accX, accY, accZ);
+}
+
+void __attribute__((picinterrupt(("low_priority")))) Low_ISR(){
+    if(TMR2IF){
+        TMR2IF = 0;
+        postpostscaler = (postpostscaler+1)%8;
+        if(!postpostscaler){
+            if(dir == -1){
+                LATAbits.LATA5 = !LATAbits.LATA5;;
+            }else if(dir == 1){
+                LATAbits.LATA7 = !LATAbits.LATA7;;
+            }else{}
+        }
+
+    }
+    return;
 }

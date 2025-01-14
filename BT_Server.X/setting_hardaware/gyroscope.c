@@ -5,10 +5,10 @@
 #include "gyroscope.h"
 #include "uart.h"
 
-#define LEFT_ON() LATAbits.LATA5 = 1;
-#define LEFT_OFF() LATAbits.LATA5 = 0;
-#define RIGHT_ON() LATAbits.LATA7 = 1;
-#define RIGHT_OFF() LATAbits.LATA7 = 0;
+#define left_setlow() LATAbits.LATA5 = 0;
+#define right_setlow() LATAbits.LATA7 = 0;
+#define toggle_left() LATAbits.LATA5 = !LATAbits.LATA5;
+#define toggle_right() LATAbits.LATA7 = !LATAbits.LATA7;
 
 #define _XTAL_FREQ 4000000
 #define MPU_ADDR 0x68
@@ -23,6 +23,9 @@ float pitch_offset = 0.0;
 int16_t accX, accY, accZ;
 uint8_t accX_high, accX_low, accY_high, accY_low, accZ_high, accZ_low;
 float angle;
+
+int dir;
+int postpostscaler;
 
 void Gyroscope_Initialize(void) {
     OSCCON = 0x60;
@@ -65,15 +68,14 @@ void Check_Gyroscope(int blinker_dir){
 
     
     if (angle > 30.0) {
-        LEFT_ON();
-        RIGHT_OFF();
+        dir = -1;
     }
     else if (angle < -30.0) {
-        LEFT_OFF();
-        RIGHT_ON();
+        dir = 1;
     } else{
-        LEFT_OFF();
-        RIGHT_OFF();
+        dir = 0;
+        left_setlow();
+        right_setlow();
     }
 
 }
@@ -143,4 +145,20 @@ void Calibration(void){
     accY = (accY_high << 8) | accY_low;
     accZ = (accZ_high << 8) | accZ_low;
     pitch_offset =  calculate_angle(accX, accY, accZ);
+}
+
+void __interrupt(low_priority) Low_ISR(){
+    if(TMR2IF){
+        TMR2IF = 0;
+        postpostscaler = (postpostscaler+1)%8;
+        if(!postpostscaler){
+            if(dir == -1){
+                toggle_left();
+            }else if(dir == 1){
+                toggle_right();
+            }else{}
+        }
+        
+    }
+    return;
 }

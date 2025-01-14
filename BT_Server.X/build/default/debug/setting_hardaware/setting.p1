@@ -2,6 +2,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16 setting_hardaware/setting.h
 [; ;setting_hardaware/setting.h: 16: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
+"17
+[; ;setting_hardaware/setting.h: 17: void TMR2_Initialize(void);
+[v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
 "3 setting_hardaware/interrupt_manager.h
 [; ;setting_hardaware/interrupt_manager.h: 3: void INTERRUPT_Initialize(void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
@@ -20,6 +23,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7553
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 7553: extern volatile __bit IRCF0 __attribute__((address(0x7E9C)));
 [v _IRCF0 `Vb ~T0 @X0 0 e@32412 ]
+"2677
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2677:     struct {
+[s S96 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S96 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2687
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2687:     struct {
+[s S97 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S97 . . TX1IF RC1IF ]
+"2676
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2676: typedef union {
+[u S95 `S96 1 `S97 1 ]
+[n S95 . . . ]
+"2693
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2693: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS95 ~T0 @X0 0 e@3998 ]
+"2754
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2754:     struct {
+[s S99 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S99 . TMR1IP TMR2IP CCP1IP SSPIP TXIP RCIP ADIP PSPIP ]
+"2764
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2764:     struct {
+[s S100 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S100 . . TX1IP RC1IP ]
+"2753
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2753: typedef union {
+[u S98 `S99 1 `S100 1 ]
+[n S98 . . . ]
+"2770
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2770: extern volatile IPR1bits_t IPR1bits __attribute__((address(0xF9F)));
+[v _IPR1bits `VS98 ~T0 @X0 0 e@3999 ]
+"2600
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2600:     struct {
+[s S93 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S93 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2610
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2610:     struct {
+[s S94 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S94 . . TX1IE RC1IE ]
+"2599
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2599: typedef union {
+[u S92 `S93 1 `S94 1 ]
+[n S92 . . . ]
+"2616
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2616: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS92 ~T0 @X0 0 e@3997 ]
+"5315
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5315: extern volatile unsigned char T2CON __attribute__((address(0xFCA)));
+[v _T2CON `Vuc ~T0 @X0 0 e@4042 ]
+"5413
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5413: extern volatile unsigned char PR2 __attribute__((address(0xFCB)));
+[v _PR2 `Vuc ~T0 @X0 0 e@4043 ]
 "2 setting_hardaware/setting.c
 [; ;setting_hardaware/setting.c: 2: 
 [p x OSC  =  INTIO67       ]
@@ -512,6 +566,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "63
 [; ;setting_hardaware/setting.c: 63:     OSCILLATOR_Initialize();
 [e ( _OSCILLATOR_Initialize ..  ]
+"64
+[; ;setting_hardaware/setting.c: 64:     TMR2_Initialize();
+[e ( _TMR2_Initialize ..  ]
 "67
 [; ;setting_hardaware/setting.c: 67:     INTERRUPT_Initialize();
 [e ( _INTERRUPT_Initialize ..  ]
@@ -545,4 +602,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "81
 [; ;setting_hardaware/setting.c: 81: }
 [e :UE 282 ]
+}
+"83
+[; ;setting_hardaware/setting.c: 83: void TMR2_Initialize(){
+[v _TMR2_Initialize `(v ~T0 @X0 1 ef ]
+{
+[e :U _TMR2_Initialize ]
+[f ]
+"84
+[; ;setting_hardaware/setting.c: 84:     PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"85
+[; ;setting_hardaware/setting.c: 85:     IPR1bits.TMR2IP = 1;
+[e = . . _IPR1bits 0 1 -> -> 1 `i `uc ]
+"86
+[; ;setting_hardaware/setting.c: 86:     PIE1bits.TMR2IE = 1;
+[e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
+"87
+[; ;setting_hardaware/setting.c: 87:     T2CON = 255;
+[e = _T2CON -> -> 255 `i `uc ]
+"88
+[; ;setting_hardaware/setting.c: 88:     PR2 = 255;
+[e = _PR2 -> -> 255 `i `uc ]
+"90
+[; ;setting_hardaware/setting.c: 90: }
+[e :UE 283 ]
 }

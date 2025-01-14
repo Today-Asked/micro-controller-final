@@ -4693,6 +4693,7 @@ float calculate_angle(int16_t accX, int16_t accY, int16_t accZ);
 
 void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
+void TMR2_Initialize(void);
 # 1 "main.c" 2
 
 

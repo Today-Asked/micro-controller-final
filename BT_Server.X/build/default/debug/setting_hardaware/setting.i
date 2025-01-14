@@ -4751,6 +4751,7 @@ float calculate_angle(int16_t accX, int16_t accY, int16_t accZ);
 
 void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
+void TMR2_Initialize(void);
 # 58 "setting_hardaware/setting.c" 2
 
 
@@ -4758,7 +4759,7 @@ void SYSTEM_Initialize(void)
 {
 
     OSCILLATOR_Initialize();
-
+    TMR2_Initialize();
 
 
     INTERRUPT_Initialize();
@@ -4774,5 +4775,14 @@ void OSCILLATOR_Initialize(void)
     IRCF1 = 1;
     IRCF0 = 0;
 
+
+}
+
+void TMR2_Initialize(){
+    PIR1bits.TMR2IF = 0;
+    IPR1bits.TMR2IP = 1;
+    PIE1bits.TMR2IE = 1;
+    T2CON = 255;
+    PR2 = 255;
 
 }
