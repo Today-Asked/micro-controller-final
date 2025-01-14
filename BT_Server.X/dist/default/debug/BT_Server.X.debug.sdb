@@ -51,25 +51,25 @@
 [v _ADC_Read ADC_Read `(i  1 e 2 0 ]
 "36
 [v _Check_ADC Check_ADC `(v  1 e 1 0 ]
-"30 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
+"31 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
 [v _Gyroscope_Initialize Gyroscope_Initialize `(v  1 e 1 0 ]
-"46
+"47
 [v _Check_Gyroscope Check_Gyroscope `(v  1 e 1 0 ]
-"83
+"99
 [v _calculate_angle calculate_angle `(f  1 e 4 0 ]
-"88
+"104
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
-"97
+"113
 [v _I2C_Start I2C_Start `(v  1 e 1 0 ]
-"103
+"119
 [v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
-"108
+"124
 [v _I2C_Write I2C_Write `(v  1 e 1 0 ]
-"115
+"131
 [v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
-"128
+"144
 [v _Calibration Calibration `(v  1 e 1 0 ]
-"150
+"166
 [v _Low_ISR Low_ISR `IIL(v  1 e 1 0 ]
 "3 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
@@ -495,6 +495,8 @@
 "27
 [v _dir dir `i  1 e 2 0 ]
 "28
+[v _from_mid from_mid `i  1 e 2 0 ]
+"29
 [v _postpostscaler postpostscaler `i  1 e 2 0 ]
 "7 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/uart.c
 [v _mystring mystring `[20]uc  1 e 20 0 ]
@@ -504,9 +506,9 @@
 [v _main main `(v  1 e 1 0 ]
 {
 "27
-[v main@blinker_dir blinker_dir `i  1 a 2 2 ]
+[v main@blinker_dir blinker_dir `i  1 a 2 3 ]
 "28
-[v main@prev_bend_sensor_val prev_bend_sensor_val `i  1 a 2 0 ]
+[v main@prev_bend_sensor_val prev_bend_sensor_val `i  1 a 2 1 ]
 "43
 } 0
 "60 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/setting.c
@@ -529,54 +531,54 @@
 {
 "21
 } 0
-"30 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
+"31 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
 [v _Gyroscope_Initialize Gyroscope_Initialize `(v  1 e 1 0 ]
 {
-"44
+"45
 } 0
-"88
+"104
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
 {
-"94
+"110
 } 0
-"128
+"144
 [v _Calibration Calibration `(v  1 e 1 0 ]
 {
-"129
-[v Calibration@accZ accZ `s  1 a 2 118 ]
-[v Calibration@accX accX `s  1 a 2 116 ]
-"130
-[v Calibration@accZ_low accZ_low `uc  1 a 1 123 ]
-[v Calibration@accZ_high accZ_high `uc  1 a 1 122 ]
-[v Calibration@accX_low accX_low `uc  1 a 1 121 ]
-[v Calibration@accX_high accX_high `uc  1 a 1 120 ]
-"148
+"145
+[v Calibration@accZ accZ `s  1 a 2 120 ]
+[v Calibration@accX accX `s  1 a 2 118 ]
+"146
+[v Calibration@accZ_low accZ_low `uc  1 a 1 125 ]
+[v Calibration@accZ_high accZ_high `uc  1 a 1 124 ]
+[v Calibration@accX_low accX_low `uc  1 a 1 123 ]
+[v Calibration@accX_high accX_high `uc  1 a 1 122 ]
+"164
 } 0
 "8 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "20
 } 0
-"46 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
+"47 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
 [v _Check_Gyroscope Check_Gyroscope `(v  1 e 1 0 ]
 {
-[v Check_Gyroscope@blinker_dir blinker_dir `i  1 p 2 114 ]
-"81
+[v Check_Gyroscope@blinker_dir blinker_dir `i  1 p 2 118 ]
+"97
 } 0
-"83
+"99
 [v _calculate_angle calculate_angle `(f  1 e 4 0 ]
 {
-[v calculate_angle@accX accX `s  1 p 2 100 ]
-[v calculate_angle@accY accY `s  1 p 2 102 ]
-[v calculate_angle@accZ accZ `s  1 p 2 104 ]
-"85
+[v calculate_angle@accX accX `s  1 p 2 104 ]
+[v calculate_angle@accY accY `s  1 p 2 106 ]
+[v calculate_angle@accZ accZ `s  1 p 2 108 ]
+"101
 } 0
 "24 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sqrtf.c
 [v _sqrtf sqrtf `(f  1 e 4 0 ]
 {
-[u S1681 . 4 `f 1 f 4 0 `l 1 i 4 0 ]
+[u S1682 . 4 `f 1 f 4 0 `l 1 i 4 0 ]
 "29
-[v sqrtf@ix ix `S1681  1 a 4 93 ]
+[v sqrtf@ix ix `S1682  1 a 4 93 ]
 "28
 [v sqrtf@r r `ul  1 a 4 89 ]
 "27
@@ -592,62 +594,62 @@
 "22 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\atan2f.c
 [v _atan2f atan2f `(f  1 e 4 0 ]
 {
-[u S1604 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1605 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "25
-[v atan2f@iy iy `S1604  1 a 4 95 ]
-[v atan2f@ix ix `S1604  1 a 4 91 ]
+[v atan2f@iy iy `S1605  1 a 4 99 ]
+[v atan2f@ix ix `S1605  1 a 4 95 ]
 "24
-[v atan2f@z z `f  1 a 4 87 ]
+[v atan2f@z z `f  1 a 4 91 ]
 "26
-[v atan2f@m m `uc  1 a 1 99 ]
+[v atan2f@m m `uc  1 a 1 103 ]
 "22
-[v atan2f@y y `f  1 p 4 59 ]
-[v atan2f@x x `f  1 p 4 63 ]
+[v atan2f@y y `f  1 p 4 63 ]
+[v atan2f@x x `f  1 p 4 67 ]
 "84
 } 0
 "40 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\atanf.c
 [v _atanf atanf `(f  1 e 4 0 ]
 {
-[u S1604 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1605 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "43
-[v atanf@ix ix `S1604  1 a 4 55 ]
+[v atanf@ix ix `S1605  1 a 4 59 ]
 "42
-[v atanf@z z `f  1 a 4 51 ]
-[v atanf@w w `f  1 a 4 46 ]
-[v atanf@s2 s2 `f  1 a 4 33 ]
-[v atanf@s1 s1 `f  1 a 4 29 ]
+[v atanf@z z `f  1 a 4 55 ]
+[v atanf@w w `f  1 a 4 50 ]
+[v atanf@s2 s2 `f  1 a 4 37 ]
+[v atanf@s1 s1 `f  1 a 4 33 ]
 "45
-[v atanf@id id `c  1 a 1 50 ]
+[v atanf@id id `c  1 a 1 54 ]
 "44
-[v atanf@sign sign `a  1 a 1 45 ]
+[v atanf@sign sign `a  1 a 1 49 ]
 "40
-[v atanf@x x `f  1 p 4 13 ]
+[v atanf@x x `f  1 p 4 17 ]
 "94
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\fabsf.c
 [v _fabsf fabsf `(f  1 e 4 0 ]
 {
-[u S1604 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1605 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v fabsf@u u `S1604  1 a 4 113 ]
+[v fabsf@u u `S1605  1 a 4 13 ]
 "4
 [v fabsf@x x `f  1 p 4 109 ]
 "5
-[v fabsf@F465 F465 `S1604  1 s 4 F465 ]
+[v fabsf@F465 F465 `S1605  1 s 4 F465 ]
 "9
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
 {
-[u S1604 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1605 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v ___fpclassifyf@u u `S1604  1 a 4 15 ]
+[v ___fpclassifyf@u u `S1605  1 a 4 15 ]
 "7
 [v ___fpclassifyf@e e `i  1 a 2 13 ]
 "4
 [v ___fpclassifyf@x x `f  1 p 4 5 ]
 "5
-[v ___fpclassifyf@F465 F465 `S1604  1 s 4 F465 ]
+[v ___fpclassifyf@F465 F465 `S1605  1 s 4 F465 ]
 "11
 } 0
 "245 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcadd.c
@@ -682,17 +684,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1469 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1470 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1474 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1477 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1469 1 fAsBytes 4 0 `S1474 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1477  1 a 4 38 ]
+[s S1475 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1478 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1470 1 fAsBytes 4 0 `S1475 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1478  1 a 4 38 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 33 ]
-[s S1545 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1546 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1548 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1545 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1548  1 a 2 42 ]
+[u S1549 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1546 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1549  1 a 2 42 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 37 ]
 "11
@@ -746,35 +748,35 @@
 [v ___flge@ff2 ff2 `d  1 p 4 9 ]
 "19
 } 0
-"108 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
+"124 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
 [v _I2C_Write I2C_Write `(v  1 e 1 0 ]
 {
 [v I2C_Write@data data `uc  1 p 1 wreg ]
 [v I2C_Write@data data `uc  1 p 1 wreg ]
 [v I2C_Write@data data `uc  1 p 1 5 ]
-"112
+"128
 } 0
-"103
+"119
 [v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
 {
-"106
+"122
 } 0
-"97
+"113
 [v _I2C_Start I2C_Start `(v  1 e 1 0 ]
 {
-"100
+"116
 } 0
-"115
+"131
 [v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
 {
 [v I2C_Read@ack ack `uc  1 p 1 wreg ]
-"116
+"132
 [v I2C_Read@data data `uc  1 a 1 6 ]
-"115
+"131
 [v I2C_Read@ack ack `uc  1 p 1 wreg ]
-"117
+"133
 [v I2C_Read@ack ack `uc  1 p 1 5 ]
-"126
+"142
 } 0
 "36 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/adc.c
 [v _Check_ADC Check_ADC `(v  1 e 1 0 ]
@@ -794,8 +796,8 @@
 [v ADC_Read@channel channel `i  1 p 2 5 ]
 "34
 } 0
-"150 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
+"166 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
 [v _Low_ISR Low_ISR `IIL(v  1 e 1 0 ]
 {
-"164
+"180
 } 0

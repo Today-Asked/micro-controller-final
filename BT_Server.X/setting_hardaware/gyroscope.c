@@ -25,6 +25,7 @@ uint8_t accX_high, accX_low, accY_high, accY_low, accZ_high, accZ_low;
 float angle;
 
 int dir;
+int from_mid = 0;
 int postpostscaler;
 
 void Gyroscope_Initialize(void) {
@@ -67,15 +68,30 @@ void Check_Gyroscope(int blinker_dir){
     angle = calculate_angle(accX, accY, accZ) - pitch_offset;
 
     
-    if (angle > 30.0) {
-        dir = -1;
-    }
-    else if (angle < -30.0) {
-        dir = 1;
-    } else{
-        dir = 0;
-        left_setlow();
-        right_setlow();
+    if (angle > 30.0) { // left
+        if (dir == -1 && from_mid) {
+            dir = 0;
+            from_mid = 0;
+            left_setlow();
+        } else if (dir == 0 && from_mid) {
+            dir = -1;
+            from_mid = 0;
+            right_setlow();
+        }
+        __delay_ms(300);
+    } else if (angle < -30.0) { // right
+        if (dir == 1 && from_mid) {
+            dir = 0;
+            from_mid = 0;
+            right_setlow();
+        } else if (dir == 0 && from_mid) {
+            dir = 1;
+            from_mid = 0;
+            left_setlow();
+        }
+        __delay_ms(300);
+    } else {
+        from_mid = 1;
     }
 
 }
