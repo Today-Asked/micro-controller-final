@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include "uart.h"
 
-#define BRAKE_ON() LATAbits.LATA6 = 1;
-#define BRAKE_OFF() LATAbits.LATA6 = 0;
+#define BRAKE_ON() LATAbits.LATA7 = 1;
+#define BRAKE_OFF() LATAbits.LATA7 = 0;
 
 void ADC_Initialize(void)
 {
@@ -46,7 +46,7 @@ void Check_ADC(int prev_sensor_val){
     {
         BRAKE_ON();
     }
-    else
+    else if(prev_sensor_val>=0x0170)
     {
         BRAKE_OFF();
     }
