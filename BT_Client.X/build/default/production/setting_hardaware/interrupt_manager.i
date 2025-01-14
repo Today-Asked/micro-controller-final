@@ -4635,4 +4635,14 @@ void INTERRUPT_Initialize (void)
     RCONbits.IPEN = 1;
     INTCONbits.GIEH = 1;
     INTCONbits.GIEL = 1;
+
+
+    ADCON1 = 0x0f;
+    LATA = 0x00;
+    TRISAbits.TRISA5 = 0;
+    TRISAbits.TRISA6 = 0;
+    TRISAbits.TRISA7 = 0;
+
+    INTCONbits.INT0IE = 1;
+    INTCONbits.INT0IF = 0;
 }

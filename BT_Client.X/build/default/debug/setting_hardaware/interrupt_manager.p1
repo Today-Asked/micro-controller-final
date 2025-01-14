@@ -74,21 +74,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1509
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1509: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
 [v _TRISAbits `VS59 ~T0 @X0 0 e@3986 ]
-"983
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 983:     struct {
-[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S45 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"993
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 993:     struct {
-[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S46 . LA0 LA1 LA2 LA3 LA4 LA5 LA6 LA7 ]
-"982
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 982: typedef union {
-[u S44 `S45 1 `S46 1 ]
-[n S44 . . . ]
-"1004
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1004: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
-[v _LATAbits `VS44 ~T0 @X0 0 e@3977 ]
 "54 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -527,36 +512,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/interrupt_manager.c: 11:     LATA = 0x00;
 [e = _LATA -> -> 0 `i `uc ]
 "12
-[; ;setting_hardaware/interrupt_manager.c: 12:     TRISAbits.TRISA1 = 0;
-[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
+[; ;setting_hardaware/interrupt_manager.c: 12:     TRISAbits.TRISA5 = 0;
+[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
 "13
-[; ;setting_hardaware/interrupt_manager.c: 13:     TRISAbits.TRISA2 = 0;
-[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+[; ;setting_hardaware/interrupt_manager.c: 13:     TRISAbits.TRISA6 = 0;
+[e = . . _TRISAbits 0 6 -> -> 0 `i `uc ]
 "14
-[; ;setting_hardaware/interrupt_manager.c: 14:     TRISAbits.TRISA3 = 0;
-[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
-"15
-[; ;setting_hardaware/interrupt_manager.c: 15:     TRISAbits.TRISA4 = 0;
-[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
+[; ;setting_hardaware/interrupt_manager.c: 14:     TRISAbits.TRISA7 = 0;
+[e = . . _TRISAbits 0 7 -> -> 0 `i `uc ]
 "16
-[; ;setting_hardaware/interrupt_manager.c: 16:     LATAbits.LATA1 = 0;
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-"17
-[; ;setting_hardaware/interrupt_manager.c: 17:     LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"18
-[; ;setting_hardaware/interrupt_manager.c: 18:     LATAbits.LATA3 = 0;
-[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
-"19
-[; ;setting_hardaware/interrupt_manager.c: 19:     LATAbits.LATA4 = 0;
-[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
-"21
-[; ;setting_hardaware/interrupt_manager.c: 21:     INTCONbits.INT0IE = 1;
+[; ;setting_hardaware/interrupt_manager.c: 16:     INTCONbits.INT0IE = 1;
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"22
-[; ;setting_hardaware/interrupt_manager.c: 22:     INTCONbits.INT0IF = 0;
+"17
+[; ;setting_hardaware/interrupt_manager.c: 17:     INTCONbits.INT0IF = 0;
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"23
-[; ;setting_hardaware/interrupt_manager.c: 23: }
+"18
+[; ;setting_hardaware/interrupt_manager.c: 18: }
 [e :UE 281 ]
 }

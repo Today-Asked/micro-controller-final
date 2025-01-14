@@ -13,39 +13,45 @@
 #define brake_off() LATAbits.LATA6 = 0;
 
 int state = 0;
-
+int dir = 0;
+int postpostscaler;
 char str[20];
 
-// void displayBinary(int num) {
-//     // Assuming TRISD0-TRISD3 are connected to your LEDs (active low)
-//     LATAbits.LATA1 = (num & 0x01) ? 1 : 0; // Least significant bit
-//     LATAbits.LATA2 = (num & 0x02) ? 1 : 0;
-//     LATAbits.LATA3 = (num & 0x04) ? 1 : 0;
-//     LATAbits.LATA4 = (num & 0x08) ? 1 : 0; // Most significant bit
-// }
+ void displayBinary(int num) {
+     // Assuming TRISD0-TRISD3 are connected to your LEDs (active low)
+     LATAbits.LATA1 = (num & 0x01) ? 1 : 0; // Least significant bit
+     LATAbits.LATA2 = (num & 0x02) ? 1 : 0;
+     LATAbits.LATA3 = (num & 0x04) ? 1 : 0;
+     LATAbits.LATA4 = (num & 0x08) ? 1 : 0; // Most significant bit
+ }
 
 void initialState(){
 }
 
-void ledRightOn(){
+void ledRightOn(int num){
+    displayBinary(num);
     dir = 1;
 }
 
 void ledOff(int num){
     dir = 0;
+    displayBinary(num);
     left_setlow();
     right_setlow();
 }
 
 void ledLeftOn(int num){
     dir = -1;
+    displayBinary(num);
 }
 
-void BrakeOn(){
+void BrakeOn(int num){
+    displayBinary(num);
     brake_on();
 }
 
-void BrakeOff(){
+void BrakeOff(int num){
+    displayBinary(num);
     brake_off();
 }
 
@@ -59,19 +65,21 @@ void main(void)
                 initialState();
                 break;
             case 1:
-                ledRightOn();
+                ledRightOn(1);
                 break;
             case 2:
-                ledOff();
+                ledOff(2);
                 break;
             case 3:
-                ledLeftOn();
+                ledLeftOn(3);
                 break;
             case 4:
-                BreakOn();
+                displayBinary(4);
+                brake_on();
                 break;
             case 5:
-                BreakOff();
+                displayBinary(5);
+                brake_off();
                 break;
             default:
                 break;

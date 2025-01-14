@@ -4675,6 +4675,7 @@ void INTERRUPT_Initialize(void);
 
 void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
+void TMR2_Initialize(void);
 # 1 "main.c" 2
 
 
@@ -4890,70 +4891,52 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 4 "main.c" 2
-
-
-
-
+# 15 "main.c"
 int state = 0;
-
+int dir = 0;
+int postpostscaler;
 char str[20];
 
-void displayBinary(int num) {
+ void displayBinary(int num) {
 
-    LATAbits.LATA1 = (num & 0x01) ? 1 : 0;
-    LATAbits.LATA2 = (num & 0x02) ? 1 : 0;
-    LATAbits.LATA3 = (num & 0x04) ? 1 : 0;
-    LATAbits.LATA4 = (num & 0x08) ? 1 : 0;
-}
+     LATAbits.LATA1 = (num & 0x01) ? 1 : 0;
+     LATAbits.LATA2 = (num & 0x02) ? 1 : 0;
+     LATAbits.LATA3 = (num & 0x04) ? 1 : 0;
+     LATAbits.LATA4 = (num & 0x08) ? 1 : 0;
+ }
 
 void initialState(){
-    displayBinary(0);
 }
 
 void ledRightOn(int num){
     displayBinary(num);
+    dir = 1;
 }
 
-void ledRightOff(int num){
+void ledOff(int num){
+    dir = 0;
     displayBinary(num);
+    LATAbits.LATA5 = 0;;
+    LATAbits.LATA7 = 0;;
 }
 
 void ledLeftOn(int num){
+    dir = -1;
     displayBinary(num);
 }
 
-void ledLeftOff(int num){
+void BrakeOn(int num){
     displayBinary(num);
+    LATAbits.LATA6 = 1;;
 }
 
-void BreakOn(int num){
+void BrakeOff(int num){
     displayBinary(num);
-}
-
-void BreakOff(int num){
-    displayBinary(num);
+    LATAbits.LATA6 = 0;;
 }
 
 void main(void)
 {
-
-    ADCON1 = 0x0f;
-    LATA = 0x00;
-    TRISAbits.TRISA1 = 0;
-    TRISAbits.TRISA2 = 0;
-    TRISAbits.TRISA3 = 0;
-    TRISAbits.TRISA4 = 0;
-    LATAbits.LATA1 = 0;
-    LATAbits.LATA2 = 0;
-    LATAbits.LATA3 = 0;
-    LATAbits.LATA4 = 0;
-
-
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.INT0IE = 1;
-    INTCONbits.INT0IF = 0;
-
     SYSTEM_Initialize() ;
 
     while(1) {
@@ -4965,19 +4948,18 @@ void main(void)
                 ledRightOn(1);
                 break;
             case 2:
-                ledRightOff(2);
+                ledOff(2);
                 break;
             case 3:
                 ledLeftOn(3);
                 break;
             case 4:
-                ledLeftOff(4);
+                displayBinary(4);
+                LATAbits.LATA6 = 1;;
                 break;
             case 5:
-                BreakOn(5);
-                break;
-            case 6:
-                BreakOff(6);
+                displayBinary(5);
+                LATAbits.LATA6 = 0;;
                 break;
             default:
                 break;
@@ -5015,7 +4997,7 @@ void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void)
             strcpy(command, "");
             return;
         }
-        else if(command[0] == 'L' && command[1] == 'R' && command[2] == 'F' && strlen(command) == 3){
+        else if(command[0] == 'L' && command[1] == 'F' && strlen(command) == 2){
             state = 2;
             ClearBuffer();
             strcpy(command, "");
@@ -5027,26 +5009,28 @@ void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void)
             strcpy(command, "");
             return;
         }
-        else if(command[0] == 'L' && command[1] == 'L' && command[2] == 'F' && strlen(command) == 3){
+        else if(command[0] == 'B' && command[1] == 'N' && strlen(command) == 2){
             state = 4;
             ClearBuffer();
             strcpy(command, "");
             return;
         }
-        else if(command[0] == 'B' && command[1] == 'N' && strlen(command) == 2){
+        else if(command[0] == 'B' && command[1] == 'F' && strlen(command) == 2){
             state = 5;
             ClearBuffer();
             strcpy(command, "");
             return;
         }
-        else if(command[0] == 'B' && command[1] == 'F' && strlen(command) == 2){
-            state = 6;
-            ClearBuffer();
-            strcpy(command, "");
-            return;
+    }else if(TMR2IF){
+        TMR2IF = 0;
+        postpostscaler = (postpostscaler+1)%8;
+        if(!postpostscaler){
+            if(dir == -1){
+                LATAbits.LATA5 = !LATAbits.LATA5;;
+            }else if(dir == 1){
+                LATAbits.LATA7 = !LATAbits.LATA7;;
+            }else{}
         }
-
-
     }
 
 
