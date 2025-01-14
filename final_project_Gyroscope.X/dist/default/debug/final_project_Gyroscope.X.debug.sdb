@@ -1,0 +1,370 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4520 ]
+[d frameptr 4065 ]
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\__fpclassifyf.c
+[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
+"22 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\atan2f.c
+[v _atan2f atan2f `(f  1 e 4 0 ]
+"40 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\atanf.c
+[v _atanf atanf `(f  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\fabsf.c
+[v _fabsf fabsf `(f  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"24 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sqrtf.c
+[v _sqrtf sqrtf `(f  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"34 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\final_project_Gyroscope.X\Gyroscope.c
+[v _main main `(v  1 e 1 0 ]
+"96
+[v _calculate_angle calculate_angle `(f  1 e 4 0 ]
+"101
+[v _I2C_Init I2C_Init `(v  1 e 1 0 ]
+"110
+[v _I2C_Start I2C_Start `(v  1 e 1 0 ]
+"116
+[v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
+"121
+[v _I2C_Write I2C_Write `(v  1 e 1 0 ]
+"128
+[v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
+"141
+[v _Calibration Calibration `(v  1 e 1 0 ]
+"977 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"1477
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"4690
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"4915
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
+[s S86 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"4940
+[s S95 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK1 1 0 :1:1 
+`uc 1 ADMSK2 1 0 :1:2 
+`uc 1 ADMSK3 1 0 :1:3 
+`uc 1 ADMSK4 1 0 :1:4 
+`uc 1 ADMSK5 1 0 :1:5 
+]
+[u S102 . 1 `S86 1 . 1 0 `S95 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES102  1 e 1 @4037 ]
+"5010
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+"5080
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
+"5301
+[v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
+"5308
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+"6085
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"7022
+[v _ACKDT ACKDT `VEb  1 e 0 @32301 ]
+"7025
+[v _ACKEN ACKEN `VEb  1 e 0 @32300 ]
+"7133
+[v _BF BF `VEb  1 e 0 @32312 ]
+"7997
+[v _PEN PEN `VEb  1 e 0 @32298 ]
+"8171
+[v _RCEN RCEN `VEb  1 e 0 @32299 ]
+"8297
+[v _SEN SEN `VEb  1 e 0 @32296 ]
+"20 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\atanf.c
+[v _atanhi atanhi `C[4]f  1 s 16 atanhi ]
+"27
+[v _atanlo atanlo `C[4]f  1 s 16 atanlo ]
+"3 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\errno.c
+[v _errno errno `i  1 e 2 0 ]
+"23 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\final_project_Gyroscope.X\Gyroscope.c
+[v _pitch_offset pitch_offset `f  1 e 4 0 ]
+"34
+[v _main main `(v  1 e 1 0 ]
+{
+"38
+[v main@angle angle `f  1 a 4 16 ]
+"36
+[v main@accZ accZ `s  1 a 2 8 ]
+[v main@accY accY `s  1 a 2 6 ]
+[v main@accX accX `s  1 a 2 4 ]
+"37
+[v main@accZ_low accZ_low `uc  1 a 1 15 ]
+[v main@accZ_high accZ_high `uc  1 a 1 14 ]
+[v main@accY_low accY_low `uc  1 a 1 13 ]
+[v main@accY_high accY_high `uc  1 a 1 12 ]
+[v main@accX_low accX_low `uc  1 a 1 11 ]
+[v main@accX_high accX_high `uc  1 a 1 10 ]
+"93
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 0 ]
+[v ___flge@ff2 ff2 `d  1 p 4 4 ]
+"19
+} 0
+"101 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\final_project_Gyroscope.X\Gyroscope.c
+[v _I2C_Init I2C_Init `(v  1 e 1 0 ]
+{
+"107
+} 0
+"141
+[v _Calibration Calibration `(v  1 e 1 0 ]
+{
+"142
+[v Calibration@accZ accZ `s  1 a 2 107 ]
+[v Calibration@accY accY `s  1 a 2 105 ]
+[v Calibration@accX accX `s  1 a 2 103 ]
+"143
+[v Calibration@accZ_low accZ_low `uc  1 a 1 114 ]
+[v Calibration@accZ_high accZ_high `uc  1 a 1 113 ]
+[v Calibration@accY_low accY_low `uc  1 a 1 112 ]
+[v Calibration@accY_high accY_high `uc  1 a 1 111 ]
+[v Calibration@accX_low accX_low `uc  1 a 1 110 ]
+[v Calibration@accX_high accX_high `uc  1 a 1 109 ]
+"161
+} 0
+"96
+[v _calculate_angle calculate_angle `(f  1 e 4 0 ]
+{
+[v calculate_angle@accX accX `s  1 p 2 87 ]
+[v calculate_angle@accY accY `s  1 p 2 89 ]
+[v calculate_angle@accZ accZ `s  1 p 2 91 ]
+"98
+} 0
+"24 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sqrtf.c
+[v _sqrtf sqrtf `(f  1 e 4 0 ]
+{
+[u S685 . 4 `f 1 f 4 0 `l 1 i 4 0 ]
+"29
+[v sqrtf@ix ix `S685  1 a 4 88 ]
+"28
+[v sqrtf@r r `ul  1 a 4 84 ]
+"27
+[v sqrtf@m m `l  1 a 4 80 ]
+[v sqrtf@t t `l  1 a 4 76 ]
+[v sqrtf@q q `l  1 a 4 72 ]
+[v sqrtf@i i `l  1 a 4 68 ]
+[v sqrtf@s s `l  1 a 4 64 ]
+"24
+[v sqrtf@x x `f  1 p 4 55 ]
+"102
+} 0
+"22 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\atan2f.c
+[v _atan2f atan2f `(f  1 e 4 0 ]
+{
+[u S608 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"25
+[v atan2f@iy iy `S608  1 a 4 82 ]
+[v atan2f@ix ix `S608  1 a 4 78 ]
+"24
+[v atan2f@z z `f  1 a 4 74 ]
+"26
+[v atan2f@m m `uc  1 a 1 86 ]
+"22
+[v atan2f@y y `f  1 p 4 46 ]
+[v atan2f@x x `f  1 p 4 50 ]
+"84
+} 0
+"40 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\atanf.c
+[v _atanf atanf `(f  1 e 4 0 ]
+{
+[u S608 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"43
+[v atanf@ix ix `S608  1 a 4 42 ]
+"42
+[v atanf@z z `f  1 a 4 38 ]
+[v atanf@w w `f  1 a 4 33 ]
+[v atanf@s2 s2 `f  1 a 4 20 ]
+[v atanf@s1 s1 `f  1 a 4 16 ]
+"45
+[v atanf@id id `c  1 a 1 37 ]
+"44
+[v atanf@sign sign `a  1 a 1 32 ]
+"40
+[v atanf@x x `f  1 p 4 0 ]
+"94
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\fabsf.c
+[v _fabsf fabsf `(f  1 e 4 0 ]
+{
+[u S608 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"6
+[v fabsf@u u `S608  1 a 4 121 ]
+"4
+[v fabsf@x x `f  1 p 4 117 ]
+"5
+[v fabsf@F465 F465 `S608  1 s 4 F465 ]
+"9
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\__fpclassifyf.c
+[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
+{
+[u S608 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"6
+[v ___fpclassifyf@u u `S608  1 a 4 10 ]
+"7
+[v ___fpclassifyf@e e `i  1 a 2 8 ]
+"4
+[v ___fpclassifyf@x x `f  1 p 4 0 ]
+"5
+[v ___fpclassifyf@F465 F465 `S608  1 s 4 F465 ]
+"11
+} 0
+"245 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@b b `d  1 p 4 55 ]
+[v ___flsub@a a `d  1 p 4 59 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 54 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 53 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 52 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 51 ]
+"10
+[v ___fladd@b b `d  1 p 4 39 ]
+[v ___fladd@a a `d  1 p 4 43 ]
+"237
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+{
+[v ___flneg@f1 f1 `d  1 p 4 0 ]
+"20
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S473 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S478 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S481 . 4 `l 1 i 4 0 `d 1 f 4 0 `S473 1 fAsBytes 4 0 `S478 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S481  1 a 4 33 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 27 ]
+[s S549 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S552 . 2 `s 1 i 2 0 `us 1 n 2 0 `S549 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S552  1 a 2 37 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 32 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 31 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 26 ]
+"8
+[v ___flmul@b b `d  1 p 4 14 ]
+[v ___flmul@a a `d  1 p 4 18 ]
+"205
+} 0
+"11 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 111 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 104 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 109 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 116 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 115 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 108 ]
+"11
+[v ___fldiv@b b `d  1 p 4 92 ]
+[v ___fldiv@a a `d  1 p 4 96 ]
+"185
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 p 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 p 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 p 1 8 ]
+"44
+} 0
+"121 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\final_project_Gyroscope.X\Gyroscope.c
+[v _I2C_Write I2C_Write `(v  1 e 1 0 ]
+{
+[v I2C_Write@data data `uc  1 p 1 wreg ]
+[v I2C_Write@data data `uc  1 p 1 wreg ]
+[v I2C_Write@data data `uc  1 p 1 0 ]
+"125
+} 0
+"116
+[v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
+{
+"119
+} 0
+"110
+[v _I2C_Start I2C_Start `(v  1 e 1 0 ]
+{
+"113
+} 0
+"128
+[v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
+{
+[v I2C_Read@ack ack `uc  1 p 1 wreg ]
+"129
+[v I2C_Read@data data `uc  1 a 1 1 ]
+"128
+[v I2C_Read@ack ack `uc  1 p 1 wreg ]
+"130
+[v I2C_Read@ack ack `uc  1 p 1 0 ]
+"139
+} 0

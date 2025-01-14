@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=final_project.X
+PROJECTNAME=final_project_Gyroscope.X
 
 # Active Configuration
 DEFAULTCONF=default
