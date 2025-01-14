@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include "uart.h"
 
+#define BRAKE LATAbits.LATA6;
+
 void ADC_Initialize(void)
 {
     TRISAbits.RA0 = 1;
@@ -41,10 +43,10 @@ void Check_ADC(int prev_sensor_val){
     
     if(prev_sensor_val<=0x0130)
     {
-        UART_Write_Text("5\r\n"); // turn on the brake light
+        BRAKE = 1;
     }
     else
     {
-        UART_Write_Text("6\r\n"); // turn off the brake light
+        BRAKE = 0;
     }
 }

@@ -5,9 +5,8 @@
 #include "gyroscope.h"
 #include "uart.h"
 
-#define LEFT -1
-#define RIGHT 1
-#define OFF 0
+#define LEFT LATAbits.LATA5;
+#define RIGHT LATAbits.LATA7;
 
 #define _XTAL_FREQ 4000000
 #define MPU_ADDR 0x68
@@ -64,16 +63,17 @@ void Check_Gyroscope(int blinker_dir){
 
     
     if (angle > 30.0) {
-        UART_Write_Text("1\r\n");
+        LEFT = 1;
+        RIGHT = 0;
     }
     else if (angle < -30.0) {
-        UART_Write_Text("3\r\n");
-    } 
-//    else {
-//        
-//    }
+        LEFT = 0;
+        RIGHT = 1;
+    } else{
+        LEFT = 0;
+        RIGHT = 0;
+    }
 
-    __delay_ms(100);
 }
 
 float calculate_angle(int16_t accX, int16_t accY, int16_t accZ) {

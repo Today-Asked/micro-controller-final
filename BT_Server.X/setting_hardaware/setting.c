@@ -65,7 +65,7 @@ void SYSTEM_Initialize(void)
 //    TMR1_Initialize();
 //    TMR0_Initialize();
     INTERRUPT_Initialize();
-    UART_Initialize();
+    // UART_Initialize();
     //CCP1_Initialize();
     ADC_Initialize();
     Gyroscope_Initialize();
