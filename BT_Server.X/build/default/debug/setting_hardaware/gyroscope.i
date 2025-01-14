@@ -5019,7 +5019,7 @@ void I2C_Stop(void);
 void I2C_Write(uint8_t data);
 uint8_t I2C_Read(uint8_t ack);
 void Calibration(void);
-float calculate_angle(int16_t accX, int16_t accZ);
+float calculate_angle(int16_t accX, int16_t accY, int16_t accZ);
 # 5 "setting_hardaware/gyroscope.c" 2
 
 # 1 "setting_hardaware/uart.h" 1
@@ -5036,8 +5036,8 @@ void MyusartRead();
 # 20 "setting_hardaware/gyroscope.c"
 float pitch_offset = 0.0;
 
-int16_t accX, accZ;
-uint8_t accX_high, accX_low, accZ_high, accZ_low;
+int16_t accX, accY, accZ;
+uint8_t accX_high, accX_low, accY_high, accY_low, accZ_high, accZ_low;
 float angle;
 
 void Gyroscope_Initialize(void) {
@@ -5065,31 +5065,36 @@ void Check_Gyroscope(int blinker_dir){
 
     accX_high = I2C_Read(1);
     accX_low = I2C_Read(1);
+    accY_high = I2C_Read(1);
+    accY_low = I2C_Read(1);
     accZ_high = I2C_Read(1);
     accZ_low = I2C_Read(0);
     I2C_Stop();
 
 
     accX = (accX_high << 8) | accX_low;
+    accY = (accY_high << 8) | accY_low;
     accZ = (accZ_high << 8) | accZ_low;
 
 
-    angle = calculate_angle(accX, accZ) - pitch_offset;
+    angle = calculate_angle(accX, accY, accZ) - pitch_offset;
 
 
-    if (angle > 45.0) {
-        UART_Write_Text("LLN\r\n");
-    } else if (angle < -45.0) {
-        UART_Write_Text("LRN\r\n");
-    } else {
-
+    if (angle > 30.0) {
+        UART_Write_Text("1\r\n");
     }
+    else if (angle < -30.0) {
+        UART_Write_Text("3\r\n");
+    }
+
+
+
 
     _delay((unsigned long)((100)*(4000000/4000.0)));
 }
 
-float calculate_angle(int16_t accX, int16_t accZ) {
-    return atan2f((float)(accX - 0),(float)(accZ - 0)) * 180.0 / 3.14159265358979323846;
+float calculate_angle(int16_t accX, int16_t accY, int16_t accZ) {
+    return atan2f((float)accX,sqrtf((float)accY * accY + (float)accZ * accZ)) * 180.0 / 3.14159265358979323846;
 }
 
 
@@ -5143,11 +5148,14 @@ void Calibration(void){
     I2C_Write((0x68 << 1) | 1);
     accX_high = I2C_Read(1);
     accX_low = I2C_Read(1);
+    accY_high = I2C_Read(1);
+    accY_low = I2C_Read(1);
     accZ_high = I2C_Read(1);
     accZ_low = I2C_Read(0);
     I2C_Stop();
 
     accX = (accX_high << 8) | accX_low;
+    accY = (accY_high << 8) | accY_low;
     accZ = (accZ_high << 8) | accZ_low;
-    pitch_offset = atan2f((float)accX,(float)accZ) * 180.0 / 3.14159265358979323846;
+    pitch_offset = calculate_angle(accX, accY, accZ);
 }

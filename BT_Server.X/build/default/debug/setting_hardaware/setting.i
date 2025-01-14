@@ -4745,7 +4745,7 @@ void I2C_Stop(void);
 void I2C_Write(uint8_t data);
 uint8_t I2C_Read(uint8_t ack);
 void Calibration(void);
-float calculate_angle(int16_t accX, int16_t accZ);
+float calculate_angle(int16_t accX, int16_t accY, int16_t accZ);
 # 13 "setting_hardaware/setting.h" 2
 
 

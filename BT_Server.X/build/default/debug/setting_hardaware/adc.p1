@@ -601,7 +601,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/adc.c: 43:     {
 {
 "44
-[; ;setting_hardaware/adc.c: 44:         UART_Write_Text("BN\r\n");
+[; ;setting_hardaware/adc.c: 44:         UART_Write_Text("5\r\n");
 [e ( _UART_Write_Text (1 :s 1C ]
 "45
 [; ;setting_hardaware/adc.c: 45:     }
@@ -614,7 +614,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/adc.c: 47:     {
 {
 "48
-[; ;setting_hardaware/adc.c: 48:         UART_Write_Text("BF\r\n");
+[; ;setting_hardaware/adc.c: 48:         UART_Write_Text("6\r\n");
 [e ( _UART_Write_Text (1 :s 2C ]
 "49
 [; ;setting_hardaware/adc.c: 49:     }
@@ -624,5 +624,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/adc.c: 50: }
 [e :UE 288 ]
 }
-[a 1C 66 78 13 10 0 ]
-[a 2C 66 70 13 10 0 ]
+[a 2C 54 13 10 0 ]
+[a 1C 53 13 10 0 ]

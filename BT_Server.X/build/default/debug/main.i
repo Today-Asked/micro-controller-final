@@ -4687,7 +4687,7 @@ void I2C_Stop(void);
 void I2C_Write(uint8_t data);
 uint8_t I2C_Read(uint8_t ack);
 void Calibration(void);
-float calculate_angle(int16_t accX, int16_t accZ);
+float calculate_angle(int16_t accX, int16_t accY, int16_t accZ);
 # 13 "./setting_hardaware/setting.h" 2
 
 
@@ -4935,15 +4935,15 @@ void main(void)
     int prev_bend_sensor_val;
 
     while(1) {
-        if(isConnected == 1 && needSendMsg == 1){
-            displayBinary(0);
-            UART_Write_Text("LRN\r\n");
-            needSendMsg = 0;
-        }
+
+
+
+
+
 
         Check_ADC(prev_bend_sensor_val);
 
-       Check_Gyroscope(blinker_dir);
+        Check_Gyroscope(blinker_dir);
         _delay((unsigned long)((20)*(4000000/4000.0)));
     }
     return;

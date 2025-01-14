@@ -28,15 +28,15 @@ void main(void)
     int prev_bend_sensor_val;
     
     while(1) {
-        if(isConnected == 1 && needSendMsg == 1){
-            displayBinary(0);
-            UART_Write_Text("LRN\r\n");
-            needSendMsg = 0;
-        }
+        // if(isConnected == 1 && needSendMsg == 1){
+        //     displayBinary(0);
+        //     UART_Write_Text("LRN\r\n");
+        //     needSendMsg = 0;
+        // }
 
         Check_ADC(prev_bend_sensor_val);
 
-       Check_Gyroscope(blinker_dir);
+        Check_Gyroscope(blinker_dir);
         __delay_ms(20);
     }
     return;

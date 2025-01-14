@@ -18,9 +18,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 ./setting_hardaware/setting.h
 [; ;./setting_hardaware/setting.h: 15: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"7 ./setting_hardaware/uart.h
-[; ;./setting_hardaware/uart.h: 7: void UART_Write_Text(char* text);
-[v _UART_Write_Text `(v ~T0 @X0 0 ef1`*uc ]
 "36 ./setting_hardaware/adc.h
 [; ;./setting_hardaware/adc.h: 36: void Check_ADC();
 [v _Check_ADC `(v ~T0 @X0 0 e? ]
@@ -52,8 +49,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6724
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6724: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS274 ~T0 @X0 0 e@4082 ]
+"7 ./setting_hardaware/uart.h
+[; ;./setting_hardaware/uart.h: 7: void UART_Write_Text(char* text);
+[v _UART_Write_Text `(v ~T0 @X0 0 ef1`*uc ]
 [t T42 __interrupt low_priority ]
-"8180
+"8180 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 8180: extern volatile __bit RCIF __attribute__((address(0x7CF5)));
 [v _RCIF `Vb ~T0 @X0 0 e@31989 ]
 "3121
@@ -607,28 +607,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 30:     while(1) {
 [e :U 287 ]
 {
-"31
-[; ;main.c: 31:         if(isConnected == 1 && needSendMsg == 1){
-[e $ ! && == _isConnected -> 1 `i == _needSendMsg -> 1 `i 289  ]
-{
-"32
-[; ;main.c: 32:             displayBinary(0);
-[e ( _displayBinary (1 -> 0 `i ]
-"33
-[; ;main.c: 33:             UART_Write_Text("LRN\r\n");
-[e ( _UART_Write_Text (1 :s 1C ]
-"34
-[; ;main.c: 34:             needSendMsg = 0;
-[e = _needSendMsg -> 0 `i ]
-"35
-[; ;main.c: 35:         }
-}
-[e :U 289 ]
 "37
 [; ;main.c: 37:         Check_ADC(prev_bend_sensor_val);
 [e ( _Check_ADC _prev_bend_sensor_val ]
 "39
-[; ;main.c: 39:        Check_Gyroscope(blinker_dir);
+[; ;main.c: 39:         Check_Gyroscope(blinker_dir);
 [e ( _Check_Gyroscope (1 _blinker_dir ]
 "40
 [; ;main.c: 40:         _delay((unsigned long)((20)*(4000000/4000.0)));
@@ -657,51 +640,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "47
 [; ;main.c: 47:     if (INTCONbits.RBIF) {
-[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 291  ]
+[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 290  ]
 {
 "48
 [; ;main.c: 48:         _delay((unsigned long)((100)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "49
 [; ;main.c: 49:         if(count == 0){
-[e $ ! == _count -> 0 `i 292  ]
+[e $ ! == _count -> 0 `i 291  ]
 {
 "50
 [; ;main.c: 50:             UART_Write_Text("AT\r\n");
-[e ( _UART_Write_Text (1 :s 2C ]
+[e ( _UART_Write_Text (1 :s 1C ]
 "51
 [; ;main.c: 51:         }
 }
-[e $U 293  ]
+[e $U 292  ]
 "52
 [; ;main.c: 52:         else if(count == 1){
-[e :U 292 ]
-[e $ ! == _count -> 1 `i 294  ]
+[e :U 291 ]
+[e $ ! == _count -> 1 `i 293  ]
 {
 "53
 [; ;main.c: 53:             UART_Write_Text("AT+INQ\r\n");
-[e ( _UART_Write_Text (1 :s 3C ]
+[e ( _UART_Write_Text (1 :s 2C ]
 "54
 [; ;main.c: 54:         }
 }
-[e $U 295  ]
+[e $U 294  ]
 "55
 [; ;main.c: 55:         else if(count == 2){
-[e :U 294 ]
-[e $ ! == _count -> 2 `i 296  ]
+[e :U 293 ]
+[e $ ! == _count -> 2 `i 295  ]
 {
 "56
 [; ;main.c: 56:             UART_Write_Text("AT+CONN1\r\n");
-[e ( _UART_Write_Text (1 :s 4C ]
+[e ( _UART_Write_Text (1 :s 3C ]
 "57
 [; ;main.c: 57:             count = -1;
 [e = _count -U -> 1 `i ]
 "58
 [; ;main.c: 58:         }
 }
-[e :U 296 ]
 [e :U 295 ]
-[e :U 293 ]
+[e :U 294 ]
+[e :U 292 ]
 "59
 [; ;main.c: 59:         count++;
 [e ++ _count -> 1 `i ]
@@ -711,10 +694,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [; ;main.c: 62:     }
 }
-[e :U 291 ]
+[e :U 290 ]
 "63
 [; ;main.c: 63: }
-[e :UE 290 ]
+[e :UE 289 ]
 }
 [v $root$_Lo_ISR `(v ~T0 @X0 0 e ]
 "66
@@ -727,13 +710,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "68
 [; ;main.c: 68:     if(RCIF)
-[e $ ! _RCIF 298  ]
+[e $ ! _RCIF 297  ]
 "69
 [; ;main.c: 69:     {
 {
 "70
 [; ;main.c: 70:         if(RCSTAbits.OERR)
-[e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 299  ]
+[e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 298  ]
 "71
 [; ;main.c: 71:         {
 {
@@ -749,7 +732,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "75
 [; ;main.c: 75:         }
 }
-[e :U 299 ]
+[e :U 298 ]
 "77
 [; ;main.c: 77:         MyusartRead();
 [e ( _MyusartRead ..  ]
@@ -758,7 +741,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _command `uc ~T0 @X0 -> 20 `i a ]
 "79
 [; ;main.c: 79:         if(RCREG == '\r' || RCREG == '\n'){
-[e $ ! || == -> _RCREG `ui -> 13 `ui == -> _RCREG `ui -> 10 `ui 300  ]
+[e $ ! || == -> _RCREG `ui -> 13 `ui == -> _RCREG `ui -> 10 `ui 299  ]
 {
 "80
 [; ;main.c: 80:             strcpy(command, GetString());
@@ -769,10 +752,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "82
 [; ;main.c: 82:         }
 }
-[e :U 300 ]
+[e :U 299 ]
 "83
 [; ;main.c: 83:         if(command[0] == 'O' && command[1] == 'K' && strlen(command) == 2){
-[e $ ! && && == -> *U + &U _command * -> -> -> 0 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 79 `ui == -> *U + &U _command * -> -> -> 1 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 75 `ui == ( _strlen (1 -> &U _command `*Cuc -> -> 2 `i `ui 301  ]
+[e $ ! && && == -> *U + &U _command * -> -> -> 0 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 79 `ui == -> *U + &U _command * -> -> -> 1 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 75 `ui == ( _strlen (1 -> &U _command `*Cuc -> -> 2 `i `ui 300  ]
 {
 "84
 [; ;main.c: 84:             LATAbits.LATA1 = 1;
@@ -782,18 +765,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ClearBuffer ..  ]
 "86
 [; ;main.c: 86:             strcpy(command, "");
-[e ( _strcpy (2 , &U _command :s 5C ]
+[e ( _strcpy (2 , &U _command :s 4C ]
 "87
 [; ;main.c: 87:             return;
-[e $UE 297  ]
+[e $UE 296  ]
 "88
 [; ;main.c: 88:         }
 }
-[e $U 302  ]
+[e $U 301  ]
 "89
 [; ;main.c: 89:         else if(command[0] == '+' && command[1] == 'I' && command[2] == 'N' && command[3] == 'Q' && command[4] == 'E'){
-[e :U 301 ]
-[e $ ! && && && && == -> *U + &U _command * -> -> -> 0 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 43 `ui == -> *U + &U _command * -> -> -> 1 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 73 `ui == -> *U + &U _command * -> -> -> 2 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 78 `ui == -> *U + &U _command * -> -> -> 3 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 81 `ui == -> *U + &U _command * -> -> -> 4 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 69 `ui 303  ]
+[e :U 300 ]
+[e $ ! && && && && == -> *U + &U _command * -> -> -> 0 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 43 `ui == -> *U + &U _command * -> -> -> 1 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 73 `ui == -> *U + &U _command * -> -> -> 2 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 78 `ui == -> *U + &U _command * -> -> -> 3 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 81 `ui == -> *U + &U _command * -> -> -> 4 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 69 `ui 302  ]
 {
 "90
 [; ;main.c: 90:             LATAbits.LATA2 = 1;
@@ -803,18 +786,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ClearBuffer ..  ]
 "92
 [; ;main.c: 92:             strcpy(command, "");
-[e ( _strcpy (2 , &U _command :s 6C ]
+[e ( _strcpy (2 , &U _command :s 5C ]
 "93
 [; ;main.c: 93:             return;
-[e $UE 297  ]
+[e $UE 296  ]
 "94
 [; ;main.c: 94:         }
 }
-[e $U 304  ]
+[e $U 303  ]
 "95
 [; ;main.c: 95:         else if(command[0] == '+' && command[1] == 'C' && command[2] == 'o' && command[3] == 'n'){
-[e :U 303 ]
-[e $ ! && && && == -> *U + &U _command * -> -> -> 0 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 43 `ui == -> *U + &U _command * -> -> -> 1 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 67 `ui == -> *U + &U _command * -> -> -> 2 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 111 `ui == -> *U + &U _command * -> -> -> 3 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 110 `ui 305  ]
+[e :U 302 ]
+[e $ ! && && && == -> *U + &U _command * -> -> -> 0 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 43 `ui == -> *U + &U _command * -> -> -> 1 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 67 `ui == -> *U + &U _command * -> -> -> 2 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 111 `ui == -> *U + &U _command * -> -> -> 3 `i `ui `ux -> -> # *U &U _command `ui `ux `ui -> 110 `ui 304  ]
 {
 "96
 [; ;main.c: 96:             LATAbits.LATA3 = 1;
@@ -833,31 +816,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ClearBuffer ..  ]
 "101
 [; ;main.c: 101:             strcpy(command, "");
-[e ( _strcpy (2 , &U _command :s 7C ]
+[e ( _strcpy (2 , &U _command :s 6C ]
 "102
 [; ;main.c: 102:             return;
-[e $UE 297  ]
+[e $UE 296  ]
 "103
 [; ;main.c: 103:         }
 }
-[e :U 305 ]
 [e :U 304 ]
-[e :U 302 ]
+[e :U 303 ]
+[e :U 301 ]
 "104
 [; ;main.c: 104:     }
 }
-[e :U 298 ]
+[e :U 297 ]
 "108
 [; ;main.c: 108:     return;
-[e $UE 297  ]
+[e $UE 296  ]
 "109
 [; ;main.c: 109: }
-[e :UE 297 ]
+[e :UE 296 ]
 }
-[a 2C 65 84 13 10 0 ]
-[a 3C 65 84 43 73 78 81 13 10 0 ]
-[a 1C 76 82 78 13 10 0 ]
-[a 4C 65 84 43 67 79 78 78 49 13 10 0 ]
+[a 1C 65 84 13 10 0 ]
+[a 2C 65 84 43 73 78 81 13 10 0 ]
+[a 3C 65 84 43 67 79 78 78 49 13 10 0 ]
+[a 4C 0 ]
 [a 5C 0 ]
 [a 6C 0 ]
-[a 7C 0 ]

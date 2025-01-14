@@ -4835,10 +4835,10 @@ void Check_ADC(int prev_sensor_val){
 
     if(prev_sensor_val<=0x0130)
     {
-        UART_Write_Text("BN\r\n");
+        UART_Write_Text("5\r\n");
     }
     else
     {
-        UART_Write_Text("BF\r\n");
+        UART_Write_Text("6\r\n");
     }
 }

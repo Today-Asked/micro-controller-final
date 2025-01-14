@@ -19,8 +19,8 @@
 
 float pitch_offset = 0.0;
 
-int16_t accX, accZ;
-uint8_t accX_high, accX_low, accZ_high, accZ_low;
+int16_t accX, accY, accZ;
+uint8_t accX_high, accX_low, accY_high, accY_low, accZ_high, accZ_low;
 float angle;
 
 void Gyroscope_Initialize(void) {
@@ -48,31 +48,36 @@ void Check_Gyroscope(int blinker_dir){
 
     accX_high = I2C_Read(1);
     accX_low = I2C_Read(1);
+    accY_high = I2C_Read(1);
+    accY_low = I2C_Read(1);
     accZ_high = I2C_Read(1);
     accZ_low = I2C_Read(0);
     I2C_Stop();
 
     
     accX = (accX_high << 8) | accX_low;
+    accY = (accY_high << 8) | accY_low;
     accZ = (accZ_high << 8) | accZ_low;
 
     
-    angle = calculate_angle(accX, accZ) - pitch_offset;
+    angle = calculate_angle(accX, accY, accZ) - pitch_offset;
 
     
-    if (angle > 45.0) {
-        UART_Write_Text("LLN\r\n");
-    } else if (angle < -45.0) {
-        UART_Write_Text("LRN\r\n");
-    } else {
-        
+    if (angle > 30.0) {
+        UART_Write_Text("1\r\n");
     }
+    else if (angle < -30.0) {
+        UART_Write_Text("3\r\n");
+    } 
+//    else {
+//        
+//    }
 
     __delay_ms(100);
 }
 
-float calculate_angle(int16_t accX, int16_t accZ) {
-    return atan2((float)(accX - ACCX_OFFSET), (float)(accZ - ACCZ_OFFSET)) * 180.0 / M_PI;
+float calculate_angle(int16_t accX, int16_t accY, int16_t accZ) {
+    return atan2((float)accX, sqrt((float)accY * accY + (float)accZ * accZ)) * 180.0 / M_PI;
 }
 
 
@@ -126,11 +131,14 @@ void Calibration(void){
     I2C_Write((MPU_ADDR << 1) | 1);
     accX_high = I2C_Read(1);
     accX_low = I2C_Read(1);
+    accY_high = I2C_Read(1);
+    accY_low = I2C_Read(1);
     accZ_high = I2C_Read(1);
     accZ_low = I2C_Read(0);
     I2C_Stop();
 
     accX = (accX_high << 8) | accX_low;
+    accY = (accY_high << 8) | accY_low;
     accZ = (accZ_high << 8) | accZ_low;
-    pitch_offset =  atan2((float)accX, (float)accZ) * 180.0 / M_PI;
+    pitch_offset =  calculate_angle(accX, accY, accZ);
 }
