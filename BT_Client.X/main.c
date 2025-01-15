@@ -75,10 +75,14 @@ void main(void)
                 break;
             case 4:
                 displayBinary(4);
-                brake_on();
+                ledOff(4);
                 break;
             case 5:
                 displayBinary(5);
+                brake_on();
+                break;
+            case 6:
+                displayBinary(6);
                 brake_off();
                 break;
             default:
@@ -117,7 +121,7 @@ void __interrupt(low_priority)  Lo_ISR(void)
             strcpy(command, "");
             return;
         }
-        else if(command[0] == 'L' && command[1] == 'F' && strlen(command) == 2){
+        else if(command[0] == 'L' && command[1] == 'R' && command[2] == 'F' && strlen(command) == 3){
             state = 2;
             ClearBuffer();
             strcpy(command, "");
@@ -129,18 +133,24 @@ void __interrupt(low_priority)  Lo_ISR(void)
             strcpy(command, "");
             return;
         }
-        else if(command[0] == 'B' && command[1] == 'N' && strlen(command) == 2){
+        else if(command[0] == 'L' && command[1] == 'L' && command[2] == 'F' && strlen(command) == 3){
             state = 4;
             ClearBuffer();
             strcpy(command, "");
             return;
         }
-        else if(command[0] == 'B' && command[1] == 'F' && strlen(command) == 2){
+        else if(command[0] == 'B' && command[1] == 'N' && strlen(command) == 2){
             state = 5;
             ClearBuffer();
             strcpy(command, "");
             return;
-        }   
+        }
+        else if(command[0] == 'B' && command[1] == 'F' && strlen(command) == 2){
+            state = 6;
+            ClearBuffer();
+            strcpy(command, "");
+            return;
+        }  
     }else if(TMR2IF){
         TMR2IF = 0;
         postpostscaler = (postpostscaler+1)%8;
