@@ -71,30 +71,14 @@ void Check_Gyroscope(int blinker_dir){
     angle = calculate_angle(accX, accY, accZ) - pitch_offset;
 
     
-    if (angle > ANGLE_THRESHOLD) { // left
-        if (dir == -1 && from_mid) {
-            dir = 0;
-            from_mid = 0;
-            stop_blinking();
-        } else if (dir == 0 && from_mid) {
-            dir = -1;
-            from_mid = 0;
-            blink_left();
-        }
+    if (angle > 30.0) { // left
+        blink_left();
         __delay_ms(300);
-    } else if (angle < (-1) * ANGLE_THRESHOLD) { // right
-        if (dir == 1 && from_mid) {
-            dir = 0;
-            from_mid = 0;
-            stop_blinking();
-        } else if (dir == 0 && from_mid) {
-            dir = 1;
-            from_mid = 0;
-            blink_right();
-        }
+    } else if (angle < -30.0) { // right
+        blink_right();
         __delay_ms(300);
     } else {
-        from_mid = 1;
+        stop_blinking();
     }
 }
 
