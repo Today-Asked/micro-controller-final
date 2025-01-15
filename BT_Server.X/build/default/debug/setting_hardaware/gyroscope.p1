@@ -42,9 +42,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1004
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1004: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
 [v _LATAbits `VS44 ~T0 @X0 0 e@3977 ]
-"7 setting_hardaware/uart.h
-[; ;setting_hardaware/uart.h: 7: void UART_Write_Text(char* text);
-[v _UART_Write_Text `(v ~T0 @X0 0 ef1`*uc ]
 "90 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\math.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\math.h: 90: float atan2f(float, float);
 [v _atan2f `(f ~T0 @X0 0 ef2`f`f ]
@@ -513,245 +510,176 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"22 setting_hardaware/gyroscope.c
-[; ;setting_hardaware/gyroscope.c: 22: float pitch_offset = 0.0;
+"24 setting_hardaware/gyroscope.c
+[; ;setting_hardaware/gyroscope.c: 24: float pitch_offset = 0.0;
 [v _pitch_offset `f ~T0 @X0 1 e ]
 [i _pitch_offset
 -> .0.0 `f
 ]
-"24
-[; ;setting_hardaware/gyroscope.c: 24: int16_t accX, accY, accZ;
+"26
+[; ;setting_hardaware/gyroscope.c: 26: int16_t accX, accY, accZ;
 [v _accX `s ~T0 @X0 1 e ]
 [v _accY `s ~T0 @X0 1 e ]
 [v _accZ `s ~T0 @X0 1 e ]
-"25
-[; ;setting_hardaware/gyroscope.c: 25: uint8_t accX_high, accX_low, accY_high, accY_low, accZ_high, accZ_low;
+"27
+[; ;setting_hardaware/gyroscope.c: 27: uint8_t accX_high, accX_low, accY_high, accY_low, accZ_high, accZ_low;
 [v _accX_high `uc ~T0 @X0 1 e ]
 [v _accX_low `uc ~T0 @X0 1 e ]
 [v _accY_high `uc ~T0 @X0 1 e ]
 [v _accY_low `uc ~T0 @X0 1 e ]
 [v _accZ_high `uc ~T0 @X0 1 e ]
 [v _accZ_low `uc ~T0 @X0 1 e ]
-"26
-[; ;setting_hardaware/gyroscope.c: 26: float angle;
-[v _angle `f ~T0 @X0 1 e ]
 "28
-[; ;setting_hardaware/gyroscope.c: 28: int dir;
+[; ;setting_hardaware/gyroscope.c: 28: float angle;
+[v _angle `f ~T0 @X0 1 e ]
+"30
+[; ;setting_hardaware/gyroscope.c: 30: int dir;
 [v _dir `i ~T0 @X0 1 e ]
-"29
-[; ;setting_hardaware/gyroscope.c: 29: int from_mid = 0;
+"31
+[; ;setting_hardaware/gyroscope.c: 31: int from_mid = 0;
 [v _from_mid `i ~T0 @X0 1 e ]
 [i _from_mid
 -> 0 `i
 ]
-"30
-[; ;setting_hardaware/gyroscope.c: 30: int postpostscaler;
-[v _postpostscaler `i ~T0 @X0 1 e ]
 "32
-[; ;setting_hardaware/gyroscope.c: 32: void Gyroscope_Initialize(void) {
+[; ;setting_hardaware/gyroscope.c: 32: int postpostscaler;
+[v _postpostscaler `i ~T0 @X0 1 e ]
+"34
+[; ;setting_hardaware/gyroscope.c: 34: void Gyroscope_Initialize(void) {
 [v _Gyroscope_Initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _Gyroscope_Initialize ]
 [f ]
-"33
-[; ;setting_hardaware/gyroscope.c: 33:     OSCCON = 0x60;
-[e = _OSCCON -> -> 96 `i `uc ]
 "35
-[; ;setting_hardaware/gyroscope.c: 35:     I2C_Init();
+[; ;setting_hardaware/gyroscope.c: 35:     OSCCON = 0x60;
+[e = _OSCCON -> -> 96 `i `uc ]
+"37
+[; ;setting_hardaware/gyroscope.c: 37:     I2C_Init();
 [e ( _I2C_Init ..  ]
-"36
-[; ;setting_hardaware/gyroscope.c: 36:     _delay((unsigned long)((100)*(4000000/4000.0)));
+"38
+[; ;setting_hardaware/gyroscope.c: 38:     _delay((unsigned long)((100)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"39
-[; ;setting_hardaware/gyroscope.c: 39:     I2C_Start();
-[e ( _I2C_Start ..  ]
-"40
-[; ;setting_hardaware/gyroscope.c: 40:     I2C_Write(0x68 << 1);
-[e ( _I2C_Write (1 -> << -> 104 `i -> 1 `i `uc ]
 "41
-[; ;setting_hardaware/gyroscope.c: 41:     I2C_Write(0x6B);
-[e ( _I2C_Write (1 -> -> 107 `i `uc ]
+[; ;setting_hardaware/gyroscope.c: 41:     I2C_Start();
+[e ( _I2C_Start ..  ]
 "42
-[; ;setting_hardaware/gyroscope.c: 42:     I2C_Write(0x00);
-[e ( _I2C_Write (1 -> -> 0 `i `uc ]
+[; ;setting_hardaware/gyroscope.c: 42:     I2C_Write(0x68 << 1);
+[e ( _I2C_Write (1 -> << -> 104 `i -> 1 `i `uc ]
 "43
-[; ;setting_hardaware/gyroscope.c: 43:     I2C_Stop();
-[e ( _I2C_Stop ..  ]
+[; ;setting_hardaware/gyroscope.c: 43:     I2C_Write(0x6B);
+[e ( _I2C_Write (1 -> -> 107 `i `uc ]
+"44
+[; ;setting_hardaware/gyroscope.c: 44:     I2C_Write(0x00);
+[e ( _I2C_Write (1 -> -> 0 `i `uc ]
 "45
-[; ;setting_hardaware/gyroscope.c: 45:     Calibration();
+[; ;setting_hardaware/gyroscope.c: 45:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"47
+[; ;setting_hardaware/gyroscope.c: 47:     Calibration();
 [e ( _Calibration ..  ]
-"46
-[; ;setting_hardaware/gyroscope.c: 46: }
+"48
+[; ;setting_hardaware/gyroscope.c: 48: }
 [e :UE 281 ]
 }
-"48
-[; ;setting_hardaware/gyroscope.c: 48: void Check_Gyroscope(int blinker_dir){
+"50
+[; ;setting_hardaware/gyroscope.c: 50: void Check_Gyroscope(int blinker_dir){
 [v _Check_Gyroscope `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _Check_Gyroscope ]
 [v _blinker_dir `i ~T0 @X0 1 r1 ]
 [f ]
-"49
-[; ;setting_hardaware/gyroscope.c: 49:     I2C_Start();
-[e ( _I2C_Start ..  ]
-"50
-[; ;setting_hardaware/gyroscope.c: 50:     I2C_Write(0x68 << 1);
-[e ( _I2C_Write (1 -> << -> 104 `i -> 1 `i `uc ]
 "51
-[; ;setting_hardaware/gyroscope.c: 51:     I2C_Write(0x3B);
-[e ( _I2C_Write (1 -> -> 59 `i `uc ]
-"52
-[; ;setting_hardaware/gyroscope.c: 52:     I2C_Start();
+[; ;setting_hardaware/gyroscope.c: 51:     I2C_Start();
 [e ( _I2C_Start ..  ]
+"52
+[; ;setting_hardaware/gyroscope.c: 52:     I2C_Write(0x68 << 1);
+[e ( _I2C_Write (1 -> << -> 104 `i -> 1 `i `uc ]
 "53
-[; ;setting_hardaware/gyroscope.c: 53:     I2C_Write((0x68 << 1) | 1);
-[e ( _I2C_Write (1 -> | << -> 104 `i -> 1 `i -> 1 `i `uc ]
+[; ;setting_hardaware/gyroscope.c: 53:     I2C_Write(0x3B);
+[e ( _I2C_Write (1 -> -> 59 `i `uc ]
+"54
+[; ;setting_hardaware/gyroscope.c: 54:     I2C_Start();
+[e ( _I2C_Start ..  ]
 "55
-[; ;setting_hardaware/gyroscope.c: 55:     accX_high = I2C_Read(1);
-[e = _accX_high ( _I2C_Read (1 -> -> 1 `i `uc ]
-"56
-[; ;setting_hardaware/gyroscope.c: 56:     accX_low = I2C_Read(1);
-[e = _accX_low ( _I2C_Read (1 -> -> 1 `i `uc ]
+[; ;setting_hardaware/gyroscope.c: 55:     I2C_Write((0x68 << 1) | 1);
+[e ( _I2C_Write (1 -> | << -> 104 `i -> 1 `i -> 1 `i `uc ]
 "57
-[; ;setting_hardaware/gyroscope.c: 57:     accY_high = I2C_Read(1);
-[e = _accY_high ( _I2C_Read (1 -> -> 1 `i `uc ]
+[; ;setting_hardaware/gyroscope.c: 57:     accX_high = I2C_Read(1);
+[e = _accX_high ( _I2C_Read (1 -> -> 1 `i `uc ]
 "58
-[; ;setting_hardaware/gyroscope.c: 58:     accY_low = I2C_Read(1);
-[e = _accY_low ( _I2C_Read (1 -> -> 1 `i `uc ]
+[; ;setting_hardaware/gyroscope.c: 58:     accX_low = I2C_Read(1);
+[e = _accX_low ( _I2C_Read (1 -> -> 1 `i `uc ]
 "59
-[; ;setting_hardaware/gyroscope.c: 59:     accZ_high = I2C_Read(1);
-[e = _accZ_high ( _I2C_Read (1 -> -> 1 `i `uc ]
+[; ;setting_hardaware/gyroscope.c: 59:     accY_high = I2C_Read(1);
+[e = _accY_high ( _I2C_Read (1 -> -> 1 `i `uc ]
 "60
-[; ;setting_hardaware/gyroscope.c: 60:     accZ_low = I2C_Read(0);
-[e = _accZ_low ( _I2C_Read (1 -> -> 0 `i `uc ]
+[; ;setting_hardaware/gyroscope.c: 60:     accY_low = I2C_Read(1);
+[e = _accY_low ( _I2C_Read (1 -> -> 1 `i `uc ]
 "61
-[; ;setting_hardaware/gyroscope.c: 61:     I2C_Stop();
+[; ;setting_hardaware/gyroscope.c: 61:     accZ_high = I2C_Read(1);
+[e = _accZ_high ( _I2C_Read (1 -> -> 1 `i `uc ]
+"62
+[; ;setting_hardaware/gyroscope.c: 62:     accZ_low = I2C_Read(0);
+[e = _accZ_low ( _I2C_Read (1 -> -> 0 `i `uc ]
+"63
+[; ;setting_hardaware/gyroscope.c: 63:     I2C_Stop();
 [e ( _I2C_Stop ..  ]
-"64
-[; ;setting_hardaware/gyroscope.c: 64:     accX = (accX_high << 8) | accX_low;
-[e = _accX -> | << -> _accX_high `i -> 8 `i -> _accX_low `i `s ]
-"65
-[; ;setting_hardaware/gyroscope.c: 65:     accY = (accY_high << 8) | accY_low;
-[e = _accY -> | << -> _accY_high `i -> 8 `i -> _accY_low `i `s ]
 "66
-[; ;setting_hardaware/gyroscope.c: 66:     accZ = (accZ_high << 8) | accZ_low;
+[; ;setting_hardaware/gyroscope.c: 66:     accX = (accX_high << 8) | accX_low;
+[e = _accX -> | << -> _accX_high `i -> 8 `i -> _accX_low `i `s ]
+"67
+[; ;setting_hardaware/gyroscope.c: 67:     accY = (accY_high << 8) | accY_low;
+[e = _accY -> | << -> _accY_high `i -> 8 `i -> _accY_low `i `s ]
+"68
+[; ;setting_hardaware/gyroscope.c: 68:     accZ = (accZ_high << 8) | accZ_low;
 [e = _accZ -> | << -> _accZ_high `i -> 8 `i -> _accZ_low `i `s ]
-"69
-[; ;setting_hardaware/gyroscope.c: 69:     angle = calculate_angle(accX, accY, accZ) - pitch_offset;
+"71
+[; ;setting_hardaware/gyroscope.c: 71:     angle = calculate_angle(accX, accY, accZ) - pitch_offset;
 [e = _angle - ( _calculate_angle (3 , , _accX _accY _accZ _pitch_offset ]
-"72
-[; ;setting_hardaware/gyroscope.c: 72:     if (angle > 30.0) {
+"74
+[; ;setting_hardaware/gyroscope.c: 74:     if (angle > 30.0) {
 [e $ ! > -> _angle `d .30.0 283  ]
 {
-"73
-[; ;setting_hardaware/gyroscope.c: 73:         if (dir == -1 && from_mid) {
-[e $ ! && == _dir -U -> 1 `i != _from_mid -> 0 `i 284  ]
-{
-"74
-[; ;setting_hardaware/gyroscope.c: 74:             dir = 0;
-[e = _dir -> 0 `i ]
 "75
-[; ;setting_hardaware/gyroscope.c: 75:             from_mid = 0;
-[e = _from_mid -> 0 `i ]
+[; ;setting_hardaware/gyroscope.c: 75:         LATAbits.LATA6 = 1;;
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 "76
-[; ;setting_hardaware/gyroscope.c: 76:             LATAbits.LATA5 = 0; LATAbits.LATA6 = 0;;
+[; ;setting_hardaware/gyroscope.c: 76:         _delay((unsigned long)((300)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"77
+[; ;setting_hardaware/gyroscope.c: 77:     } else if (angle < -30.0) {
+}
+[e $U 284  ]
+[e :U 283 ]
+[e $ ! < -> _angle `d -U .30.0 285  ]
+{
+"78
+[; ;setting_hardaware/gyroscope.c: 78:         LATAbits.LATA5 = 1;;
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+"79
+[; ;setting_hardaware/gyroscope.c: 79:         _delay((unsigned long)((300)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"80
+[; ;setting_hardaware/gyroscope.c: 80:     } else {
+}
+[e $U 286  ]
+[e :U 285 ]
+{
+"81
+[; ;setting_hardaware/gyroscope.c: 81:         LATAbits.LATA5 = 0; LATAbits.LATA6 = 0;;
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-"77
-[; ;setting_hardaware/gyroscope.c: 77:             UART_Write_Text("LF\r\n");
-[e ( _UART_Write_Text (1 :s 1C ]
-"78
-[; ;setting_hardaware/gyroscope.c: 78:         } else if (dir == 0 && from_mid) {
-}
-[e $U 285  ]
-[e :U 284 ]
-[e $ ! && == _dir -> 0 `i != _from_mid -> 0 `i 286  ]
-{
-"79
-[; ;setting_hardaware/gyroscope.c: 79:             dir = -1;
-[e = _dir -U -> 1 `i ]
-"80
-[; ;setting_hardaware/gyroscope.c: 80:             from_mid = 0;
-[e = _from_mid -> 0 `i ]
-"81
-[; ;setting_hardaware/gyroscope.c: 81:             LATAbits.LATA6 = 1;;
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 "82
-[; ;setting_hardaware/gyroscope.c: 82:             UART_Write_Text("LLN\r\n");
-[e ( _UART_Write_Text (1 :s 2C ]
-"83
-[; ;setting_hardaware/gyroscope.c: 83:         }
+[; ;setting_hardaware/gyroscope.c: 82:     }
 }
 [e :U 286 ]
-[e :U 285 ]
-"84
-[; ;setting_hardaware/gyroscope.c: 84:         _delay((unsigned long)((300)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"85
-[; ;setting_hardaware/gyroscope.c: 85:     } else if (angle < -30.0) {
-}
-[e $U 287  ]
-[e :U 283 ]
-[e $ ! < -> _angle `d -U .30.0 288  ]
-{
-"86
-[; ;setting_hardaware/gyroscope.c: 86:         if (dir == 1 && from_mid) {
-[e $ ! && == _dir -> 1 `i != _from_mid -> 0 `i 289  ]
-{
-"87
-[; ;setting_hardaware/gyroscope.c: 87:             dir = 0;
-[e = _dir -> 0 `i ]
-"88
-[; ;setting_hardaware/gyroscope.c: 88:             from_mid = 0;
-[e = _from_mid -> 0 `i ]
-"89
-[; ;setting_hardaware/gyroscope.c: 89:             LATAbits.LATA5 = 0; LATAbits.LATA6 = 0;;
-[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-"90
-[; ;setting_hardaware/gyroscope.c: 90:         } else if (dir == 0 && from_mid) {
-}
-[e $U 290  ]
-[e :U 289 ]
-[e $ ! && == _dir -> 0 `i != _from_mid -> 0 `i 291  ]
-{
-"91
-[; ;setting_hardaware/gyroscope.c: 91:             dir = 1;
-[e = _dir -> 1 `i ]
-"92
-[; ;setting_hardaware/gyroscope.c: 92:             from_mid = 0;
-[e = _from_mid -> 0 `i ]
-"93
-[; ;setting_hardaware/gyroscope.c: 93:             LATAbits.LATA5 = 1;;
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
-"94
-[; ;setting_hardaware/gyroscope.c: 94:         }
-}
-[e :U 291 ]
-[e :U 290 ]
-"95
-[; ;setting_hardaware/gyroscope.c: 95:         _delay((unsigned long)((300)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"96
-[; ;setting_hardaware/gyroscope.c: 96:     } else {
-}
-[e $U 292  ]
-[e :U 288 ]
-{
-"97
-[; ;setting_hardaware/gyroscope.c: 97:         from_mid = 1;
-[e = _from_mid -> 1 `i ]
-"98
-[; ;setting_hardaware/gyroscope.c: 98:     }
-}
-[e :U 292 ]
-[e :U 287 ]
-"99
-[; ;setting_hardaware/gyroscope.c: 99: }
+[e :U 284 ]
+"83
+[; ;setting_hardaware/gyroscope.c: 83: }
 [e :UE 282 ]
 }
-"101
-[; ;setting_hardaware/gyroscope.c: 101: float calculate_angle(int16_t accX, int16_t accY, int16_t accZ) {
+"85
+[; ;setting_hardaware/gyroscope.c: 85: float calculate_angle(int16_t accX, int16_t accY, int16_t accZ) {
 [v _calculate_angle `(f ~T0 @X0 1 ef3`s`s`s ]
 {
 [e :U _calculate_angle ]
@@ -759,215 +687,213 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _accY `s ~T0 @X0 1 r2 ]
 [v _accZ `s ~T0 @X0 1 r3 ]
 [f ]
-"102
-[; ;setting_hardaware/gyroscope.c: 102:     return atan2f((float)accX,sqrtf((float)accY * accY + (float)accZ * accZ)) * 180.0 / 3.14159265358979323846;
+"86
+[; ;setting_hardaware/gyroscope.c: 86:     return atan2f((float)accX,sqrtf((float)accY * accY + (float)accZ * accZ)) * 180.0 / 3.14159265358979323846;
 [e ) -> / * -> ( _atan2f (2 , -> _accX `f ( _sqrtf (1 + * -> _accY `f -> -> _accY `i `f * -> _accZ `f -> -> _accZ `i `f `d .180.0 .3.14159265358979323846 `f ]
-[e $UE 293  ]
-"103
-[; ;setting_hardaware/gyroscope.c: 103: }
-[e :UE 293 ]
+[e $UE 287  ]
+"87
+[; ;setting_hardaware/gyroscope.c: 87: }
+[e :UE 287 ]
 }
-"106
-[; ;setting_hardaware/gyroscope.c: 106: void I2C_Init(void) {
+"90
+[; ;setting_hardaware/gyroscope.c: 90: void I2C_Init(void) {
 [v _I2C_Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _I2C_Init ]
 [f ]
-"107
-[; ;setting_hardaware/gyroscope.c: 107:     SSPCON1 = 0x28;
+"91
+[; ;setting_hardaware/gyroscope.c: 91:     SSPCON1 = 0x28;
 [e = _SSPCON1 -> -> 40 `i `uc ]
-"108
-[; ;setting_hardaware/gyroscope.c: 108:     SSPCON2 = 0x00;
+"92
+[; ;setting_hardaware/gyroscope.c: 92:     SSPCON2 = 0x00;
 [e = _SSPCON2 -> -> 0 `i `uc ]
-"110
-[; ;setting_hardaware/gyroscope.c: 110:     SSPADD = 9;
+"94
+[; ;setting_hardaware/gyroscope.c: 94:     SSPADD = 9;
 [e = _SSPADD -> -> 9 `i `uc ]
-"111
-[; ;setting_hardaware/gyroscope.c: 111:     SSPSTAT = 0x00;
+"95
+[; ;setting_hardaware/gyroscope.c: 95:     SSPSTAT = 0x00;
 [e = _SSPSTAT -> -> 0 `i `uc ]
-"112
-[; ;setting_hardaware/gyroscope.c: 112: }
-[e :UE 294 ]
+"96
+[; ;setting_hardaware/gyroscope.c: 96: }
+[e :UE 288 ]
 }
-"115
-[; ;setting_hardaware/gyroscope.c: 115: void I2C_Start(void) {
+"99
+[; ;setting_hardaware/gyroscope.c: 99: void I2C_Start(void) {
 [v _I2C_Start `(v ~T0 @X0 1 ef ]
 {
 [e :U _I2C_Start ]
 [f ]
-"116
-[; ;setting_hardaware/gyroscope.c: 116:     SEN = 1;
+"100
+[; ;setting_hardaware/gyroscope.c: 100:     SEN = 1;
 [e = _SEN -> -> 1 `i `b ]
-"117
-[; ;setting_hardaware/gyroscope.c: 117:     while(SEN);
-[e $U 296  ]
-[e :U 297 ]
-[e :U 296 ]
-[e $ _SEN 297  ]
-[e :U 298 ]
-"118
-[; ;setting_hardaware/gyroscope.c: 118: }
-[e :UE 295 ]
+"101
+[; ;setting_hardaware/gyroscope.c: 101:     while(SEN);
+[e $U 290  ]
+[e :U 291 ]
+[e :U 290 ]
+[e $ _SEN 291  ]
+[e :U 292 ]
+"102
+[; ;setting_hardaware/gyroscope.c: 102: }
+[e :UE 289 ]
 }
-"121
-[; ;setting_hardaware/gyroscope.c: 121: void I2C_Stop(void) {
+"105
+[; ;setting_hardaware/gyroscope.c: 105: void I2C_Stop(void) {
 [v _I2C_Stop `(v ~T0 @X0 1 ef ]
 {
 [e :U _I2C_Stop ]
 [f ]
-"122
-[; ;setting_hardaware/gyroscope.c: 122:     PEN = 1;
+"106
+[; ;setting_hardaware/gyroscope.c: 106:     PEN = 1;
 [e = _PEN -> -> 1 `i `b ]
-"123
-[; ;setting_hardaware/gyroscope.c: 123:     while(PEN);
-[e $U 300  ]
-[e :U 301 ]
-[e :U 300 ]
-[e $ _PEN 301  ]
-[e :U 302 ]
-"124
-[; ;setting_hardaware/gyroscope.c: 124: }
-[e :UE 299 ]
+"107
+[; ;setting_hardaware/gyroscope.c: 107:     while(PEN);
+[e $U 294  ]
+[e :U 295 ]
+[e :U 294 ]
+[e $ _PEN 295  ]
+[e :U 296 ]
+"108
+[; ;setting_hardaware/gyroscope.c: 108: }
+[e :UE 293 ]
 }
-"126
-[; ;setting_hardaware/gyroscope.c: 126: void I2C_Write(uint8_t data) {
+"110
+[; ;setting_hardaware/gyroscope.c: 110: void I2C_Write(uint8_t data) {
 [v _I2C_Write `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _I2C_Write ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"127
-[; ;setting_hardaware/gyroscope.c: 127:     SSPBUF = data;
+"111
+[; ;setting_hardaware/gyroscope.c: 111:     SSPBUF = data;
 [e = _SSPBUF _data ]
-"128
-[; ;setting_hardaware/gyroscope.c: 128:     while(BF);
-[e $U 304  ]
-[e :U 305 ]
-[e :U 304 ]
-[e $ _BF 305  ]
-[e :U 306 ]
-"129
-[; ;setting_hardaware/gyroscope.c: 129:     while(SSPCON2bits.ACKSTAT);
-[e $U 307  ]
-[e :U 308 ]
-[e :U 307 ]
-[e $ != -> . . _SSPCON2bits 0 6 `i -> 0 `i 308  ]
-[e :U 309 ]
-"130
-[; ;setting_hardaware/gyroscope.c: 130: }
-[e :UE 303 ]
+"112
+[; ;setting_hardaware/gyroscope.c: 112:     while(BF);
+[e $U 298  ]
+[e :U 299 ]
+[e :U 298 ]
+[e $ _BF 299  ]
+[e :U 300 ]
+"113
+[; ;setting_hardaware/gyroscope.c: 113:     while(SSPCON2bits.ACKSTAT);
+[e $U 301  ]
+[e :U 302 ]
+[e :U 301 ]
+[e $ != -> . . _SSPCON2bits 0 6 `i -> 0 `i 302  ]
+[e :U 303 ]
+"114
+[; ;setting_hardaware/gyroscope.c: 114: }
+[e :UE 297 ]
 }
-"133
-[; ;setting_hardaware/gyroscope.c: 133: uint8_t I2C_Read(uint8_t ack) {
+"117
+[; ;setting_hardaware/gyroscope.c: 117: uint8_t I2C_Read(uint8_t ack) {
 [v _I2C_Read `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _I2C_Read ]
 [v _ack `uc ~T0 @X0 1 r1 ]
 [f ]
-"134
-[; ;setting_hardaware/gyroscope.c: 134:     uint8_t data;
+"118
+[; ;setting_hardaware/gyroscope.c: 118:     uint8_t data;
 [v _data `uc ~T0 @X0 1 a ]
-"135
-[; ;setting_hardaware/gyroscope.c: 135:     RCEN = 1;
+"119
+[; ;setting_hardaware/gyroscope.c: 119:     RCEN = 1;
 [e = _RCEN -> -> 1 `i `b ]
-"136
-[; ;setting_hardaware/gyroscope.c: 136:     while(!BF);
-[e $U 311  ]
-[e :U 312 ]
-[e :U 311 ]
-[e $ ! _BF 312  ]
-[e :U 313 ]
-"137
-[; ;setting_hardaware/gyroscope.c: 137:     data = SSPBUF;
+"120
+[; ;setting_hardaware/gyroscope.c: 120:     while(!BF);
+[e $U 305  ]
+[e :U 306 ]
+[e :U 305 ]
+[e $ ! _BF 306  ]
+[e :U 307 ]
+"121
+[; ;setting_hardaware/gyroscope.c: 121:     data = SSPBUF;
 [e = _data _SSPBUF ]
-"140
-[; ;setting_hardaware/gyroscope.c: 140:     ACKDT = ack ? 0 : 1;
+"124
+[; ;setting_hardaware/gyroscope.c: 124:     ACKDT = ack ? 0 : 1;
 [e = _ACKDT -> ? != -> _ack `i -> 0 `i : -> 0 `i -> 1 `i `b ]
-"141
-[; ;setting_hardaware/gyroscope.c: 141:     ACKEN = 1;
+"125
+[; ;setting_hardaware/gyroscope.c: 125:     ACKEN = 1;
 [e = _ACKEN -> -> 1 `i `b ]
-"142
-[; ;setting_hardaware/gyroscope.c: 142:     while(ACKEN);
-[e $U 314  ]
-[e :U 315 ]
-[e :U 314 ]
-[e $ _ACKEN 315  ]
-[e :U 316 ]
-"143
-[; ;setting_hardaware/gyroscope.c: 143:     return data;
+"126
+[; ;setting_hardaware/gyroscope.c: 126:     while(ACKEN);
+[e $U 308  ]
+[e :U 309 ]
+[e :U 308 ]
+[e $ _ACKEN 309  ]
+[e :U 310 ]
+"127
+[; ;setting_hardaware/gyroscope.c: 127:     return data;
 [e ) _data ]
-[e $UE 310  ]
-"144
-[; ;setting_hardaware/gyroscope.c: 144: }
-[e :UE 310 ]
+[e $UE 304  ]
+"128
+[; ;setting_hardaware/gyroscope.c: 128: }
+[e :UE 304 ]
 }
-"146
-[; ;setting_hardaware/gyroscope.c: 146: void Calibration(void){
+"130
+[; ;setting_hardaware/gyroscope.c: 130: void Calibration(void){
 [v _Calibration `(v ~T0 @X0 1 ef ]
 {
 [e :U _Calibration ]
 [f ]
-"147
-[; ;setting_hardaware/gyroscope.c: 147:     int16_t accX, accZ;
+"131
+[; ;setting_hardaware/gyroscope.c: 131:     int16_t accX, accZ;
 [v _accX `s ~T0 @X0 1 a ]
 [v _accZ `s ~T0 @X0 1 a ]
-"148
-[; ;setting_hardaware/gyroscope.c: 148:     uint8_t accX_high, accX_low, accZ_high, accZ_low;
+"132
+[; ;setting_hardaware/gyroscope.c: 132:     uint8_t accX_high, accX_low, accZ_high, accZ_low;
 [v _accX_high `uc ~T0 @X0 1 a ]
 [v _accX_low `uc ~T0 @X0 1 a ]
 [v _accZ_high `uc ~T0 @X0 1 a ]
 [v _accZ_low `uc ~T0 @X0 1 a ]
-"149
-[; ;setting_hardaware/gyroscope.c: 149:     I2C_Start();
+"133
+[; ;setting_hardaware/gyroscope.c: 133:     I2C_Start();
 [e ( _I2C_Start ..  ]
-"150
-[; ;setting_hardaware/gyroscope.c: 150:     I2C_Write(0x68 << 1);
+"134
+[; ;setting_hardaware/gyroscope.c: 134:     I2C_Write(0x68 << 1);
 [e ( _I2C_Write (1 -> << -> 104 `i -> 1 `i `uc ]
-"151
-[; ;setting_hardaware/gyroscope.c: 151:     I2C_Write(0x3B);
+"135
+[; ;setting_hardaware/gyroscope.c: 135:     I2C_Write(0x3B);
 [e ( _I2C_Write (1 -> -> 59 `i `uc ]
-"152
-[; ;setting_hardaware/gyroscope.c: 152:     I2C_Start();
+"136
+[; ;setting_hardaware/gyroscope.c: 136:     I2C_Start();
 [e ( _I2C_Start ..  ]
-"153
-[; ;setting_hardaware/gyroscope.c: 153:     I2C_Write((0x68 << 1) | 1);
+"137
+[; ;setting_hardaware/gyroscope.c: 137:     I2C_Write((0x68 << 1) | 1);
 [e ( _I2C_Write (1 -> | << -> 104 `i -> 1 `i -> 1 `i `uc ]
-"154
-[; ;setting_hardaware/gyroscope.c: 154:     accX_high = I2C_Read(1);
+"138
+[; ;setting_hardaware/gyroscope.c: 138:     accX_high = I2C_Read(1);
 [e = _accX_high ( _I2C_Read (1 -> -> 1 `i `uc ]
-"155
-[; ;setting_hardaware/gyroscope.c: 155:     accX_low = I2C_Read(1);
+"139
+[; ;setting_hardaware/gyroscope.c: 139:     accX_low = I2C_Read(1);
 [e = _accX_low ( _I2C_Read (1 -> -> 1 `i `uc ]
-"156
-[; ;setting_hardaware/gyroscope.c: 156:     accY_high = I2C_Read(1);
+"140
+[; ;setting_hardaware/gyroscope.c: 140:     accY_high = I2C_Read(1);
 [e = _accY_high ( _I2C_Read (1 -> -> 1 `i `uc ]
-"157
-[; ;setting_hardaware/gyroscope.c: 157:     accY_low = I2C_Read(1);
+"141
+[; ;setting_hardaware/gyroscope.c: 141:     accY_low = I2C_Read(1);
 [e = _accY_low ( _I2C_Read (1 -> -> 1 `i `uc ]
-"158
-[; ;setting_hardaware/gyroscope.c: 158:     accZ_high = I2C_Read(1);
+"142
+[; ;setting_hardaware/gyroscope.c: 142:     accZ_high = I2C_Read(1);
 [e = _accZ_high ( _I2C_Read (1 -> -> 1 `i `uc ]
-"159
-[; ;setting_hardaware/gyroscope.c: 159:     accZ_low = I2C_Read(0);
+"143
+[; ;setting_hardaware/gyroscope.c: 143:     accZ_low = I2C_Read(0);
 [e = _accZ_low ( _I2C_Read (1 -> -> 0 `i `uc ]
-"160
-[; ;setting_hardaware/gyroscope.c: 160:     I2C_Stop();
+"144
+[; ;setting_hardaware/gyroscope.c: 144:     I2C_Stop();
 [e ( _I2C_Stop ..  ]
-"162
-[; ;setting_hardaware/gyroscope.c: 162:     accX = (accX_high << 8) | accX_low;
+"146
+[; ;setting_hardaware/gyroscope.c: 146:     accX = (accX_high << 8) | accX_low;
 [e = _accX -> | << -> _accX_high `i -> 8 `i -> _accX_low `i `s ]
-"163
-[; ;setting_hardaware/gyroscope.c: 163:     accY = (accY_high << 8) | accY_low;
+"147
+[; ;setting_hardaware/gyroscope.c: 147:     accY = (accY_high << 8) | accY_low;
 [e = _accY -> | << -> _accY_high `i -> 8 `i -> _accY_low `i `s ]
-"164
-[; ;setting_hardaware/gyroscope.c: 164:     accZ = (accZ_high << 8) | accZ_low;
+"148
+[; ;setting_hardaware/gyroscope.c: 148:     accZ = (accZ_high << 8) | accZ_low;
 [e = _accZ -> | << -> _accZ_high `i -> 8 `i -> _accZ_low `i `s ]
-"165
-[; ;setting_hardaware/gyroscope.c: 165:     pitch_offset = calculate_angle(accX, accY, accZ);
+"149
+[; ;setting_hardaware/gyroscope.c: 149:     pitch_offset = calculate_angle(accX, accY, accZ);
 [e = _pitch_offset ( _calculate_angle (3 , , _accX _accY _accZ ]
-"166
-[; ;setting_hardaware/gyroscope.c: 166: }
-[e :UE 317 ]
+"150
+[; ;setting_hardaware/gyroscope.c: 150: }
+[e :UE 311 ]
 }
-[a 2C 76 76 78 13 10 0 ]
-[a 1C 76 70 13 10 0 ]

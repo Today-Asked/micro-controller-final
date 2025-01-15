@@ -30,19 +30,28 @@ void initialState(){
 
 void ledRightOn(int num){
     displayBinary(num);
+    LATAbits.LATA7 = 1;
+    left_setlow();
     dir = 1;
 }
 
-void ledOff(int num){
+void ledRightOff(int num){
     dir = 0;
     displayBinary(num);
-    left_setlow();
-    right_setlow();
+//    left_setlow();
+//    right_setlow();
+    LATAbits.LATA7 = 0;
 }
 
 void ledLeftOn(int num){
     dir = -1;
+//    right_setlow();
+    LATAbits.LATA5 = 1;
     displayBinary(num);
+}
+
+void ledLeftOff(int num){
+    LATAbits.LATA5 = 0;
 }
 
 void BrakeOn(int num){
@@ -68,14 +77,14 @@ void main(void)
                 ledRightOn(1);
                 break;
             case 2:
-                ledOff(2);
+                ledRightOff(2);
                 break;
             case 3:
                 ledLeftOn(3);
                 break;
             case 4:
                 displayBinary(4);
-                ledOff(4);
+                ledLeftOff(4);
                 break;
             case 5:
                 displayBinary(5);
@@ -151,17 +160,18 @@ void __interrupt(low_priority)  Lo_ISR(void)
             strcpy(command, "");
             return;
         }  
-    }else if(TMR2IF){
-        TMR2IF = 0;
-        postpostscaler = (postpostscaler+1)%8;
-        if(!postpostscaler){
-            if(dir == -1){
-                toggle_left();
-            }else if(dir == 1){
-                toggle_right();
-            }else{}
-        }
     }
+//    else if(TMR2IF){
+//        TMR2IF = 0;
+//        postpostscaler = (postpostscaler+1)%8;
+//        if(!postpostscaler){
+//            if(dir == -1){
+//                toggle_left();
+//            }else if(dir == 1){
+//                toggle_right();
+//            }else{}
+//        }
+//    }
     
    // process other interrupt sources here, if required
 

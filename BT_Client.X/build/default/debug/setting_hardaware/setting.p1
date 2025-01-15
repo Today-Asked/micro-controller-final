@@ -2,9 +2,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 setting_hardaware/setting.h
 [; ;setting_hardaware/setting.h: 15: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"16
-[; ;setting_hardaware/setting.h: 16: void TMR2_Initialize(void);
-[v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
 "3 setting_hardaware/interrupt_manager.h
 [; ;setting_hardaware/interrupt_manager.h: 3: void INTERRUPT_Initialize(void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
@@ -563,9 +560,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "63
 [; ;setting_hardaware/setting.c: 63:     OSCILLATOR_Initialize();
 [e ( _OSCILLATOR_Initialize ..  ]
-"64
-[; ;setting_hardaware/setting.c: 64:     TMR2_Initialize();
-[e ( _TMR2_Initialize ..  ]
 "67
 [; ;setting_hardaware/setting.c: 67:     INTERRUPT_Initialize();
 [e ( _INTERRUPT_Initialize ..  ]

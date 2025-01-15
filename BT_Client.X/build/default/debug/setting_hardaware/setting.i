@@ -4741,7 +4741,7 @@ void SYSTEM_Initialize(void)
 {
 
     OSCILLATOR_Initialize();
-    TMR2_Initialize();
+
 
 
     INTERRUPT_Initialize();

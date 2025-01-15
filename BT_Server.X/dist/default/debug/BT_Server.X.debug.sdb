@@ -43,39 +43,39 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"22 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\main.c
+"22 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"8 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/adc.c
+"8 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 "22
 [v _ADC_Read ADC_Read `(i  1 e 2 0 ]
 "36
 [v _Check_ADC Check_ADC `(v  1 e 1 0 ]
-"32 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
+"34 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
 [v _Gyroscope_Initialize Gyroscope_Initialize `(v  1 e 1 0 ]
-"48
+"50
 [v _Check_Gyroscope Check_Gyroscope `(v  1 e 1 0 ]
-"101
+"85
 [v _calculate_angle calculate_angle `(f  1 e 4 0 ]
-"106
+"90
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
-"115
+"99
 [v _I2C_Start I2C_Start `(v  1 e 1 0 ]
-"121
+"105
 [v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
-"126
+"110
 [v _I2C_Write I2C_Write `(v  1 e 1 0 ]
-"133
+"117
 [v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
-"146
+"130
 [v _Calibration Calibration `(v  1 e 1 0 ]
-"3 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/interrupt_manager.c
+"3 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
-"60 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/setting.c
+"60 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/setting.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "74
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"44 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/uart.c
+"44 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/uart.c
 [v _UART_Write UART_Write `(v  1 e 1 0 ]
 "51
 [v _UART_Write_Text UART_Write_Text `(v  1 e 1 0 ]
@@ -355,7 +355,7 @@
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
 "4915
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
-[s S1022 . 1 `uc 1 SEN 1 0 :1:0 
+[s S1021 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -365,15 +365,15 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "4940
-[s S1031 . 1 `uc 1 . 1 0 :1:0 
+[s S1030 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[u S1038 . 1 `S1022 1 . 1 0 `S1031 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES1038  1 e 1 @4037 ]
+[u S1037 . 1 `S1021 1 . 1 0 `S1030 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES1037  1 e 1 @4037 ]
 "5010
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
 "5080
@@ -467,30 +467,26 @@
 [v _atanlo atanlo `C[4]f  1 s 16 atanlo ]
 "3 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\errno.c
 [v _errno errno `i  1 e 2 0 ]
-"22 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
+"24 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
 [v _pitch_offset pitch_offset `f  1 e 4 0 ]
-"24
+"26
 [v _accX accX `s  1 e 2 0 ]
 [v _accY accY `s  1 e 2 0 ]
 [v _accZ accZ `s  1 e 2 0 ]
-"25
+"27
 [v _accX_high accX_high `uc  1 e 1 0 ]
 [v _accX_low accX_low `uc  1 e 1 0 ]
 [v _accY_high accY_high `uc  1 e 1 0 ]
 [v _accY_low accY_low `uc  1 e 1 0 ]
 [v _accZ_high accZ_high `uc  1 e 1 0 ]
 [v _accZ_low accZ_low `uc  1 e 1 0 ]
-"26
-[v _angle angle `f  1 e 4 0 ]
 "28
-[v _dir dir `i  1 e 2 0 ]
-"29
-[v _from_mid from_mid `i  1 e 2 0 ]
-"7 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/uart.c
+[v _angle angle `f  1 e 4 0 ]
+"7 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/uart.c
 [v _mystring mystring `[20]uc  1 e 20 0 ]
 "8
 [v _lenStr lenStr `i  1 e 2 0 ]
-"22 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\main.c
+"22 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "27
@@ -499,7 +495,7 @@
 [v main@prev_bend_sensor_val prev_bend_sensor_val `i  1 a 2 111 ]
 "43
 } 0
-"60 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/setting.c
+"60 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/setting.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "72
@@ -509,59 +505,59 @@
 {
 "79
 } 0
-"3 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/interrupt_manager.c
+"3 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 {
 "21
 } 0
-"32 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
+"34 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
 [v _Gyroscope_Initialize Gyroscope_Initialize `(v  1 e 1 0 ]
 {
-"46
+"48
 } 0
-"106
+"90
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
 {
-"112
+"96
 } 0
-"146
+"130
 [v _Calibration Calibration `(v  1 e 1 0 ]
 {
-"147
+"131
 [v Calibration@accZ accZ `s  1 a 2 103 ]
 [v Calibration@accX accX `s  1 a 2 101 ]
-"148
+"132
 [v Calibration@accZ_low accZ_low `uc  1 a 1 108 ]
 [v Calibration@accZ_high accZ_high `uc  1 a 1 107 ]
 [v Calibration@accX_low accX_low `uc  1 a 1 106 ]
 [v Calibration@accX_high accX_high `uc  1 a 1 105 ]
-"166
+"150
 } 0
-"8 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/adc.c
+"8 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "20
 } 0
-"48 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
+"50 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
 [v _Check_Gyroscope Check_Gyroscope `(v  1 e 1 0 ]
 {
 [v Check_Gyroscope@blinker_dir blinker_dir `i  1 p 2 125 ]
-"99
+"83
 } 0
-"101
+"85
 [v _calculate_angle calculate_angle `(f  1 e 4 0 ]
 {
 [v calculate_angle@accX accX `s  1 p 2 87 ]
 [v calculate_angle@accY accY `s  1 p 2 89 ]
 [v calculate_angle@accZ accZ `s  1 p 2 91 ]
-"103
+"87
 } 0
 "24 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sqrtf.c
 [v _sqrtf sqrtf `(f  1 e 4 0 ]
 {
-[u S1621 . 4 `f 1 f 4 0 `l 1 i 4 0 ]
+[u S1618 . 4 `f 1 f 4 0 `l 1 i 4 0 ]
 "29
-[v sqrtf@ix ix `S1621  1 a 4 88 ]
+[v sqrtf@ix ix `S1618  1 a 4 88 ]
 "28
 [v sqrtf@r r `ul  1 a 4 84 ]
 "27
@@ -577,10 +573,10 @@
 "22 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\atan2f.c
 [v _atan2f atan2f `(f  1 e 4 0 ]
 {
-[u S1544 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1541 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "25
-[v atan2f@iy iy `S1544  1 a 4 82 ]
-[v atan2f@ix ix `S1544  1 a 4 78 ]
+[v atan2f@iy iy `S1541  1 a 4 82 ]
+[v atan2f@ix ix `S1541  1 a 4 78 ]
 "24
 [v atan2f@z z `f  1 a 4 74 ]
 "26
@@ -593,9 +589,9 @@
 "40 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\atanf.c
 [v _atanf atanf `(f  1 e 4 0 ]
 {
-[u S1544 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1541 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "43
-[v atanf@ix ix `S1544  1 a 4 42 ]
+[v atanf@ix ix `S1541  1 a 4 42 ]
 "42
 [v atanf@z z `f  1 a 4 38 ]
 [v atanf@w w `f  1 a 4 33 ]
@@ -612,27 +608,27 @@
 "4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\fabsf.c
 [v _fabsf fabsf `(f  1 e 4 0 ]
 {
-[u S1544 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1541 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v fabsf@u u `S1544  1 a 4 121 ]
+[v fabsf@u u `S1541  1 a 4 121 ]
 "4
 [v fabsf@x x `f  1 p 4 117 ]
 "5
-[v fabsf@F465 F465 `S1544  1 s 4 F465 ]
+[v fabsf@F465 F465 `S1541  1 s 4 F465 ]
 "9
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
 {
-[u S1544 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1541 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v ___fpclassifyf@u u `S1544  1 a 4 10 ]
+[v ___fpclassifyf@u u `S1541  1 a 4 10 ]
 "7
 [v ___fpclassifyf@e e `i  1 a 2 8 ]
 "4
 [v ___fpclassifyf@x x `f  1 p 4 0 ]
 "5
-[v ___fpclassifyf@F465 F465 `S1544  1 s 4 F465 ]
+[v ___fpclassifyf@F465 F465 `S1541  1 s 4 F465 ]
 "11
 } 0
 "245 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcadd.c
@@ -667,17 +663,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1409 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1406 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1414 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1417 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1409 1 fAsBytes 4 0 `S1414 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1417  1 a 4 33 ]
+[s S1411 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1414 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1406 1 fAsBytes 4 0 `S1411 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1414  1 a 4 33 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 27 ]
-[s S1485 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1482 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1488 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1485 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1488  1 a 2 37 ]
+[u S1485 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1482 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1485  1 a 2 37 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11
@@ -731,54 +727,37 @@
 [v ___flge@ff2 ff2 `d  1 p 4 4 ]
 "19
 } 0
-"51 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/uart.c
-[v _UART_Write_Text UART_Write_Text `(v  1 e 1 0 ]
-{
-"52
-[v UART_Write_Text@i i `i  1 a 2 5 ]
-"51
-[v UART_Write_Text@text text `*.32uc  1 p 2 1 ]
-"54
-} 0
-"44
-[v _UART_Write UART_Write `(v  1 e 1 0 ]
-{
-[v UART_Write@data data `uc  1 p 1 wreg ]
-[v UART_Write@data data `uc  1 p 1 wreg ]
-[v UART_Write@data data `uc  1 p 1 0 ]
-"48
-} 0
-"126 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
+"110 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/gyroscope.c
 [v _I2C_Write I2C_Write `(v  1 e 1 0 ]
 {
 [v I2C_Write@data data `uc  1 p 1 wreg ]
 [v I2C_Write@data data `uc  1 p 1 wreg ]
 [v I2C_Write@data data `uc  1 p 1 0 ]
-"130
+"114
 } 0
-"121
+"105
 [v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
 {
-"124
+"108
 } 0
-"115
+"99
 [v _I2C_Start I2C_Start `(v  1 e 1 0 ]
 {
-"118
+"102
 } 0
-"133
+"117
 [v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
 {
 [v I2C_Read@ack ack `uc  1 p 1 wreg ]
-"134
+"118
 [v I2C_Read@data data `uc  1 a 1 1 ]
-"133
+"117
 [v I2C_Read@ack ack `uc  1 p 1 wreg ]
-"135
+"119
 [v I2C_Read@ack ack `uc  1 p 1 0 ]
-"144
+"128
 } 0
-"36 C:\Users\user\Mavis\micro-controller-final\BT_Server.X\setting_hardaware/adc.c
+"36 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Server.X\setting_hardaware/adc.c
 [v _Check_ADC Check_ADC `(v  1 e 1 0 ]
 {
 "38
