@@ -14,6 +14,8 @@
 #define _XTAL_FREQ 4000000
 #define MPU_ADDR 0x68
 
+#define ANGLE_THRESHOLD 30.0
+
 #define ACCX_OFFSET 0
 #define ACCZ_OFFSET 0
 
@@ -69,7 +71,7 @@ void Check_Gyroscope(int blinker_dir){
     angle = calculate_angle(accX, accY, accZ) - pitch_offset;
 
     
-    if (angle > 30.0) { // left
+    if (angle > ANGLE_THRESHOLD) { // left
         if (dir == -1 && from_mid) {
             dir = 0;
             from_mid = 0;
@@ -80,7 +82,7 @@ void Check_Gyroscope(int blinker_dir){
             blink_left();
         }
         __delay_ms(300);
-    } else if (angle < -30.0) { // right
+    } else if (angle < (-1) * ANGLE_THRESHOLD) { // right
         if (dir == 1 && from_mid) {
             dir = 0;
             from_mid = 0;
