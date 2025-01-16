@@ -61,7 +61,7 @@ void SYSTEM_Initialize(void)
 {
     // PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize(); //default 1Mhz
-//    TMR2_Initialize();
+    TMR2_Initialize();
 //    TMR1_Initialize();
 //    TMR0_Initialize();
     INTERRUPT_Initialize();

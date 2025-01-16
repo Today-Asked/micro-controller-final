@@ -37,15 +37,17 @@
 [v _initialState initialState `(v  1 e 1 0 ]
 "31
 [v _ledRightOn ledRightOn `(v  1 e 1 0 ]
-"36
-[v _ledOff ledOff `(v  1 e 1 0 ]
-"43
+"38
+[v _ledRightOff ledRightOff `(v  1 e 1 0 ]
+"46
 [v _ledLeftOn ledLeftOn `(v  1 e 1 0 ]
-"58
+"53
+[v _ledLeftOff ledLeftOff `(v  1 e 1 0 ]
+"67
 [v _main main `(v  1 e 1 0 ]
-"91
+"104
 [v _Hi_ISR Hi_ISR `IIH(v  1 e 1 0 ]
-"97
+"110
 [v _Lo_ISR Lo_ISR `IIL(v  1 e 1 0 ]
 "3 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\setting_hardaware/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
@@ -403,34 +405,40 @@
 [v _mystring mystring `[20]uc  1 e 20 0 ]
 "8
 [v _lenStr lenStr `i  1 e 2 0 ]
-"58 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
+"67 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"89
+"102
 } 0
 "31
 [v _ledRightOn ledRightOn `(v  1 e 1 0 ]
 {
 [v ledRightOn@num num `i  1 p 2 3 ]
-"34
-} 0
 "36
-[v _ledOff ledOff `(v  1 e 1 0 ]
-{
-[v ledOff@num num `i  1 p 2 3 ]
-"41
 } 0
-"43
+"38
+[v _ledRightOff ledRightOff `(v  1 e 1 0 ]
+{
+[v ledRightOff@num num `i  1 p 2 3 ]
+"44
+} 0
+"46
 [v _ledLeftOn ledLeftOn `(v  1 e 1 0 ]
 {
 [v ledLeftOn@num num `i  1 p 2 3 ]
-"46
+"51
 } 0
 "20
 [v _displayBinary displayBinary `(v  1 e 1 0 ]
 {
 [v displayBinary@num num `i  1 p 2 0 ]
 "26
+} 0
+"53
+[v _ledLeftOff ledLeftOff `(v  1 e 1 0 ]
+{
+[v ledLeftOff@num num `i  1 p 2 0 ]
+"55
 } 0
 "28
 [v _initialState initialState `(v  1 e 1 0 ]
@@ -462,12 +470,12 @@
 {
 "18
 } 0
-"97 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
+"110 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
 [v _Lo_ISR Lo_ISR `IIL(v  1 e 1 0 ]
 {
-"109
+"122
 [v Lo_ISR@command command `[20]uc  1 a 20 21 ]
-"159
+"184
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
@@ -524,8 +532,8 @@
 [v ClearBuffer@i i `i  1 a 2 0 ]
 "60
 } 0
-"91 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
+"104 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
 [v _Hi_ISR Hi_ISR `IIH(v  1 e 1 0 ]
 {
-"94
+"107
 } 0

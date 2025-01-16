@@ -4910,19 +4910,28 @@ void initialState(){
 
 void ledRightOn(int num){
     displayBinary(num);
+    LATAbits.LATA7 = 1;
+    LATAbits.LATA5 = 0;;
     dir = 1;
 }
 
-void ledOff(int num){
+void ledRightOff(int num){
     dir = 0;
     displayBinary(num);
-    LATAbits.LATA5 = 0;;
-    LATAbits.LATA7 = 0;;
+
+
+    LATAbits.LATA7 = 0;
 }
 
 void ledLeftOn(int num){
     dir = -1;
+
+    LATAbits.LATA5 = 1;
     displayBinary(num);
+}
+
+void ledLeftOff(int num){
+    LATAbits.LATA5 = 0;
 }
 
 void BrakeOn(int num){
@@ -4948,17 +4957,21 @@ void main(void)
                 ledRightOn(1);
                 break;
             case 2:
-                ledOff(2);
+                ledRightOff(2);
                 break;
             case 3:
                 ledLeftOn(3);
                 break;
             case 4:
                 displayBinary(4);
-                LATAbits.LATA6 = 1;;
+                ledLeftOff(4);
                 break;
             case 5:
                 displayBinary(5);
+                LATAbits.LATA6 = 1;;
+                break;
+            case 6:
+                displayBinary(6);
                 LATAbits.LATA6 = 0;;
                 break;
             default:
@@ -4997,7 +5010,7 @@ void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void)
             strcpy(command, "");
             return;
         }
-        else if(command[0] == 'L' && command[1] == 'F' && strlen(command) == 2){
+        else if(command[0] == 'L' && command[1] == 'R' && command[2] == 'F' && strlen(command) == 3){
             state = 2;
             ClearBuffer();
             strcpy(command, "");
@@ -5009,19 +5022,30 @@ void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void)
             strcpy(command, "");
             return;
         }
-        else if(command[0] == 'B' && command[1] == 'N' && strlen(command) == 2){
+        else if(command[0] == 'L' && command[1] == 'L' && command[2] == 'F' && strlen(command) == 3){
             state = 4;
             ClearBuffer();
             strcpy(command, "");
             return;
         }
-        else if(command[0] == 'B' && command[1] == 'F' && strlen(command) == 2){
+        else if(command[0] == 'B' && command[1] == 'N' && strlen(command) == 2){
             state = 5;
             ClearBuffer();
             strcpy(command, "");
             return;
         }
-    }else if(TMR2IF){
+        else if(command[0] == 'B' && command[1] == 'F' && strlen(command) == 2){
+            state = 6;
+            ClearBuffer();
+            strcpy(command, "");
+            return;
+        }
+
+
+
+
+    }
+    else if(TMR2IF){
         TMR2IF = 0;
         postpostscaler = (postpostscaler+1)%8;
         if(!postpostscaler){
@@ -5032,6 +5056,7 @@ void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void)
             }else{}
         }
     }
+
 
 
 

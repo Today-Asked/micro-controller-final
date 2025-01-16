@@ -69,6 +69,7 @@ void main(void)
     SYSTEM_Initialize() ; //need to be put after LED set, otherwile LED will not work
     
     while(1) {
+        LATAbits.LATA2 = 0;
         switch(state){
             case 0:
                 initialState();
@@ -118,6 +119,7 @@ void __interrupt(low_priority)  Lo_ISR(void)
             CREN = 1;
         }
         
+        LATAbits.LATA2 = 1;
         MyusartRead();
         char command[20];
         if(RCREG == '\r' || RCREG == '\n'){
@@ -159,20 +161,25 @@ void __interrupt(low_priority)  Lo_ISR(void)
             ClearBuffer();
             strcpy(command, "");
             return;
-        }  
-    }
-//    else if(TMR2IF){
-//        TMR2IF = 0;
-//        postpostscaler = (postpostscaler+1)%8;
-//        if(!postpostscaler){
-//            if(dir == -1){
-//                toggle_left();
-//            }else if(dir == 1){
-//                toggle_right();
-//            }else{}
+        }
+//        else{
+//            ClearBuffer();
+//            return;
 //        }
-//    }
+    }
+    else if(TMR2IF){
+        TMR2IF = 0;
+        postpostscaler = (postpostscaler+1)%8;
+        if(!postpostscaler){
+            if(dir == -1){
+                toggle_left();
+            }else if(dir == 1){
+                toggle_right();
+            }else{}
+        }
+    }
     
+//    if (getString)
    // process other interrupt sources here, if required
 
     return;

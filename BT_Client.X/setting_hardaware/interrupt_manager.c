@@ -9,11 +9,9 @@ void INTERRUPT_Initialize (void)
     //LED
     ADCON1 = 0x0f;          // Set ADCON1 register for digital mode
     LATA = 0x00;            // Clear LATA
+    TRISAbits.TRISA2 = 0; 
     TRISAbits.TRISA5 = 0;   // Set RA1 as output
     TRISAbits.TRISA6 = 0;   // Set RA2 as output
     TRISAbits.TRISA7 = 0;   // Set RA3 as output
-    
-    INTCONbits.INT0IE = 1;
-    INTCONbits.INT0IF = 0;
 }
 

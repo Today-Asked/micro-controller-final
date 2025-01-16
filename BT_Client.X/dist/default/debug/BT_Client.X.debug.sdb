@@ -45,9 +45,9 @@
 [v _ledLeftOff ledLeftOff `(v  1 e 1 0 ]
 "67
 [v _main main `(v  1 e 1 0 ]
-"104
+"105
 [v _Hi_ISR Hi_ISR `IIH(v  1 e 1 0 ]
-"110
+"111
 [v _Lo_ISR Lo_ISR `IIL(v  1 e 1 0 ]
 "3 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\setting_hardaware/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
@@ -55,6 +55,8 @@
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "73
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"82
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "10 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\setting_hardaware/uart.c
 [v _UART_Initialize UART_Initialize `(v  1 e 1 0 ]
 "44
@@ -69,7 +71,7 @@
 [v _GetString GetString `(*.30uc  1 e 2 0 ]
 "977 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-[s S815 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S811 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -79,7 +81,7 @@
 `uc 1 LATA7 1 0 :1:7 
 ]
 "1004
-[s S824 . 1 `uc 1 LA0 1 0 :1:0 
+[s S820 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -88,8 +90,8 @@
 `uc 1 LA6 1 0 :1:6 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S833 . 1 `S815 1 . 1 0 `S824 1 . 1 0 ]
-[v _LATAbits LATAbits `VES833  1 e 1 @3977 ]
+[u S829 . 1 `S811 1 . 1 0 `S820 1 . 1 0 ]
+[v _LATAbits LATAbits `VES829  1 e 1 @3977 ]
 "1477
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 [s S386 . 1 `uc 1 TRISA0 1 0 :1:0 
@@ -134,7 +136,7 @@
 ]
 [u S160 . 1 `S142 1 . 1 0 `S151 1 . 1 0 ]
 [v _TRISCbits TRISCbits `VES160  1 e 1 @3988 ]
-[s S500 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S496 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -144,12 +146,12 @@
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "2616
-[s S509 . 1 `uc 1 . 1 0 :4:0 
+[s S505 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 ]
-[u S513 . 1 `S500 1 . 1 0 `S509 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES513  1 e 1 @3997 ]
+[u S509 . 1 `S496 1 . 1 0 `S505 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES509  1 e 1 @3997 ]
 [s S183 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -182,7 +184,7 @@
 ]
 [u S226 . 1 `S213 1 . 1 0 `S222 1 . 1 0 ]
 [v _IPR1bits IPR1bits `VES226  1 e 1 @3999 ]
-[s S665 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S661 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -192,23 +194,23 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "3151
-[s S674 . 1 `uc 1 . 1 0 :3:0 
+[s S670 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S677 . 1 `uc 1 . 1 0 :5:0 
+[s S673 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[s S680 . 1 `uc 1 . 1 0 :6:0 
+[s S676 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S683 . 1 `uc 1 . 1 0 :6:0 
+[s S679 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S686 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S682 . 1 `uc 1 RCD8 1 0 :1:0 
 ]
-[u S688 . 1 `S665 1 . 1 0 `S674 1 . 1 0 `S677 1 . 1 0 `S680 1 . 1 0 `S683 1 . 1 0 `S686 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES688  1 e 1 @4011 ]
-[s S566 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S684 . 1 `S661 1 . 1 0 `S670 1 . 1 0 `S673 1 . 1 0 `S676 1 . 1 0 `S679 1 . 1 0 `S682 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES684  1 e 1 @4011 ]
+[s S562 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -218,7 +220,7 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "3359
-[s S575 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S571 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -227,20 +229,20 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S584 . 1 `uc 1 . 1 0 :6:0 
+[s S580 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S587 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S583 . 1 `uc 1 TXD8 1 0 :1:0 
 ]
-[u S589 . 1 `S566 1 . 1 0 `S575 1 . 1 0 `S584 1 . 1 0 `S587 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES589  1 e 1 @4012 ]
+[u S585 . 1 `S562 1 . 1 0 `S571 1 . 1 0 `S580 1 . 1 0 `S583 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES585  1 e 1 @4012 ]
 "3576
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "3588
 [v _RCREG RCREG `VEuc  1 e 1 @4014 ]
 "3600
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
-[s S618 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S614 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -250,19 +252,19 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "4257
-[s S627 . 1 `uc 1 . 1 0 :4:0 
+[s S623 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SCKP 1 0 :1:4 
 `uc 1 . 1 0 :1:5 
 `uc 1 RCMT 1 0 :1:6 
 ]
-[s S632 . 1 `uc 1 . 1 0 :5:0 
+[s S628 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXCKP 1 0 :1:5 
 ]
-[s S635 . 1 `uc 1 . 1 0 :1:0 
+[s S631 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 W4E 1 0 :1:1 
 ]
-[u S638 . 1 `S618 1 . 1 0 `S627 1 . 1 0 `S632 1 . 1 0 `S635 1 . 1 0 ]
-[v _BAUDCONbits BAUDCONbits `VES638  1 e 1 @4024 ]
+[u S634 . 1 `S614 1 . 1 0 `S623 1 . 1 0 `S628 1 . 1 0 `S631 1 . 1 0 ]
+[v _BAUDCONbits BAUDCONbits `VES634  1 e 1 @4024 ]
 "4501
 [v _CCP1CON CCP1CON `VEuc  1 e 1 @4029 ]
 [s S27 . 1 `uc 1 ADCS 1 0 :3:0 
@@ -391,10 +393,14 @@
 [v _IRCF2 IRCF2 `VEb  1 e 0 @32414 ]
 "8180
 [v _RCIF RCIF `VEb  1 e 0 @31989 ]
+"8528
+[v _TMR2IF TMR2IF `VEb  1 e 0 @31985 ]
 "15 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
 [v _state state `i  1 e 2 0 ]
 "16
 [v _dir dir `i  1 e 2 0 ]
+"17
+[v _postpostscaler postpostscaler `i  1 e 2 0 ]
 "7 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\setting_hardaware/uart.c
 [v _mystring mystring `[20]uc  1 e 20 0 ]
 "8
@@ -402,7 +408,7 @@
 "67 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"102
+"103
 } 0
 "31
 [v _ledRightOn ledRightOn `(v  1 e 1 0 ]
@@ -449,7 +455,12 @@
 {
 "42
 } 0
-"73 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\setting_hardaware/setting.c
+"82 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\setting_hardaware/setting.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"89
+} 0
+"73
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "80
@@ -457,14 +468,14 @@
 "3 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\setting_hardaware/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 {
-"18
+"16
 } 0
-"110 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
+"111 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
 [v _Lo_ISR Lo_ISR `IIL(v  1 e 1 0 ]
 {
-"122
-[v Lo_ISR@command command `[20]uc  1 a 20 20 ]
-"179
+"124
+[v Lo_ISR@command command `[20]uc  1 a 20 21 ]
+"186
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
@@ -521,8 +532,8 @@
 [v ClearBuffer@i i `i  1 a 2 0 ]
 "60
 } 0
-"104 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
+"105 C:\Users\Ronald Wong\Desktop\大三上\微算機\final_project\micro-controller-final\BT_Client.X\main.c
 [v _Hi_ISR Hi_ISR `IIH(v  1 e 1 0 ]
 {
-"107
+"108
 } 0

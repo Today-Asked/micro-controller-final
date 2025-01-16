@@ -512,21 +512,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/interrupt_manager.c: 11:     LATA = 0x00;
 [e = _LATA -> -> 0 `i `uc ]
 "12
-[; ;setting_hardaware/interrupt_manager.c: 12:     TRISAbits.TRISA5 = 0;
-[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
+[; ;setting_hardaware/interrupt_manager.c: 12:     TRISAbits.TRISA2 = 0;
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
 "13
-[; ;setting_hardaware/interrupt_manager.c: 13:     TRISAbits.TRISA6 = 0;
-[e = . . _TRISAbits 0 6 -> -> 0 `i `uc ]
+[; ;setting_hardaware/interrupt_manager.c: 13:     TRISAbits.TRISA5 = 0;
+[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
 "14
-[; ;setting_hardaware/interrupt_manager.c: 14:     TRISAbits.TRISA7 = 0;
+[; ;setting_hardaware/interrupt_manager.c: 14:     TRISAbits.TRISA6 = 0;
+[e = . . _TRISAbits 0 6 -> -> 0 `i `uc ]
+"15
+[; ;setting_hardaware/interrupt_manager.c: 15:     TRISAbits.TRISA7 = 0;
 [e = . . _TRISAbits 0 7 -> -> 0 `i `uc ]
 "16
-[; ;setting_hardaware/interrupt_manager.c: 16:     INTCONbits.INT0IE = 1;
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"17
-[; ;setting_hardaware/interrupt_manager.c: 17:     INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"18
-[; ;setting_hardaware/interrupt_manager.c: 18: }
+[; ;setting_hardaware/interrupt_manager.c: 16: }
 [e :UE 281 ]
 }

@@ -4949,6 +4949,7 @@ void main(void)
     SYSTEM_Initialize() ;
 
     while(1) {
+        LATAbits.LATA2 = 0;
         switch(state){
             case 0:
                 initialState();
@@ -4998,6 +4999,7 @@ void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void)
             CREN = 1;
         }
 
+        LATAbits.LATA2 = 1;
         MyusartRead();
         char command[20];
         if(RCREG == '\r' || RCREG == '\n'){
@@ -5040,7 +5042,25 @@ void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void)
             strcpy(command, "");
             return;
         }
+
+
+
+
     }
-# 178 "main.c"
+    else if(TMR2IF){
+        TMR2IF = 0;
+        postpostscaler = (postpostscaler+1)%8;
+        if(!postpostscaler){
+            if(dir == -1){
+                LATAbits.LATA5 = !LATAbits.LATA5;;
+            }else if(dir == 1){
+                LATAbits.LATA7 = !LATAbits.LATA7;;
+            }else{}
+        }
+    }
+
+
+
+
     return;
 }

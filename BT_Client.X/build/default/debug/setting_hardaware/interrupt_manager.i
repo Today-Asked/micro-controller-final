@@ -4639,10 +4639,8 @@ void INTERRUPT_Initialize (void)
 
     ADCON1 = 0x0f;
     LATA = 0x00;
+    TRISAbits.TRISA2 = 0;
     TRISAbits.TRISA5 = 0;
     TRISAbits.TRISA6 = 0;
     TRISAbits.TRISA7 = 0;
-
-    INTCONbits.INT0IE = 1;
-    INTCONbits.INT0IF = 0;
 }
